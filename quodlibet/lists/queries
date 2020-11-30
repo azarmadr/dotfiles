@@ -1,8 +1,0 @@
-anne marie
-anni
-|(&(grouping=ound,#(81 day<laststarted*(0.01+rating))),&(&(grouping!=ound,language!=indi),#(9 day<laststarted*(0.01+rating))),&(language=indi,#(27 day<laststarted*(0.01+rating))))
-&(@(python: Random((int(_ts % 60),a)).random() < 0.27),@(saved: def))ohiho
-'
-&(@(saved: std),@(saved: ft))\
-|(&(grouping=ound,#(81 day<laststarted*(0.01+rating))),&(&(grouping!=ound,language!=indi),#(3 day<laststarted*(0.01+rating))),&(language=indi,#(27 day<laststarted*(0.01+rating))))
-&(@(saved: std),@(saved: ft))x

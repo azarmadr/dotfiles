@@ -1,2 +1,0 @@
-[span weight='bold' size='large']<title>[/span] - <~length> [span weight='thin']<~rating>[/span][span weight='bold' size='large']<~#rating><~language| <~language>>[/span]<version|
-[small][i]<version>[/i][/small]><tracknumber=1/1||<tracknumber=1/2||[b] <album>[/b]>><~people| by <~people>><#(playcount=0)|| [u]Played[/u]:[b]<~#playcount>[/b]> <#(skipcount=0)||[u]Skipped[/u]:[b]<~#skipcount>[/b]>
