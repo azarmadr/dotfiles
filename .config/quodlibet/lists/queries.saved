@@ -1,0 +1,12 @@
+&(@(saved: std),@(saved: ft))
+def
+&(@(python: Random((int(_ts % 60),a)).random() < 0.27),@(saved: def))
+random
+|(#(playcount+3*skipcount<3),@(saved: gs),#(rating=0))
+xtra
+|(#((laststarted+lastplayed)*rating>(0.27*skipcount+playcount)*9 day),@(saved:xtra))
+std
+#(rating*(3*playcount*lastplayed +skipcount*laststarted)>27 year)
+gs
+|(&(grouping=ound,#(81 day<laststarted*(0.01+rating))),&(&(grouping!=ound,language!=indi),#(9 day<laststarted*(0.01+rating))),&(language=indi,#(27 day<laststarted*(0.01+rating))))
+ft

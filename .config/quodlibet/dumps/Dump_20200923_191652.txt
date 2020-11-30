@@ -1,0 +1,161 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.19041-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "configparser.py", line 789, in get
+
+  File "__init__.py", line 891, in __getitem__
+
+  File "__init__.py", line 883, in __missing__
+
+KeyError: 'autoupdatetagsinfiles_update_strategy'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 206, in getint
+    return int(self._config.getfloat(section, option))
+
+  File "configparser.py", line 823, in getfloat
+
+  File "configparser.py", line 808, in _get_conv
+
+  File "configparser.py", line 803, in _get
+
+  File "configparser.py", line 792, in get
+
+configparser.NoOptionError: No option 'autoupdatetagsinfiles_update_strategy' in section: 'plugins'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 140, in __invoke
+    handler(*args)
+
+  File "C:\Users\madaz\AppData\Roaming\Quod Libet\plugins\auto_update_tags_in_files.py", line 99, in plugin_on_song_ended
+    strategy = CONFIG.update_strategy
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\__init__.py", line 544, in __get__
+    return self._conf.getint(self._name)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 447, in method
+    return config_getter(
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 214, in getint
+    raise Error(e)
+
+configparser.Error: <unprintable Error object>
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\__init__.py", line 710, in wrap
+    return handler(that, *args)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 111, in cb_handler
+    self.__invoke(librarian, args[-1], *args[:-1])
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 144, in __invoke
+    errorhook()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 188, in errorhook
+    called_in_main_thread()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 183, in called_in_main_thread
+    run_error_dialogs(exc_info, sentry_error)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 85, in run_error_dialogs
+    (str(exc_info[1]).strip() or u"\n").splitlines()[0])
+
+TypeError: __str__ returned non-string (type NoOptionError)
+
+=== LOG:
+D: 89.151: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\naalonenena.mp3
+D: 89.212: WaveformSeekBar._create_waveform: Computing data for each 0.117 seconds
+D: 89.635: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x00000000054ae840 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Changing 2 items.
+D: 89.636: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 89.636: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 89.636: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 89.636: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\naalonenena.mp3
+D: 89.640: WaveformSeekBar._create_waveform: Computing data for each 0.117 seconds
+D: 89.690: QLSubmitQueue._check_submit: Submission status: OK
+D: 03.566: config.save: Writing config...
+D: 03.623: library.save: Saving all libraries...
+D: 03.567: config.save: Writing config...
+D: 03.619: library.save: Saving all libraries...
+D: 03.567: config.save: Writing config...
+D: 03.622: library.save: Saving all libraries...
+D: 03.623: SongFileLibrary.save(<libraries.SongFileLibrary object at 0x00000000054ae840 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Saving contents to 'C:\\Users\\madaz\\AppData\\Roaming\\Quod Libet\\songs'.
+D: 72.037: Query.__init__: Creating query "&(@(saved: std),@(saved: ft))", called from SearchBarBox._update_query_from
+D: 72.049: Query.__init__: Creating query "|(#((laststarted+lastplayed)*rating>(0.27*skipcount+playcount)*2 week),@(saved:xtra))", called from IncludeSavedSearchQuery.parse_body
+D: 72.050: Query.__init__: Creating query "|(#(playcount+3*skipcount<3),#(rating*playcount*(lastplayed+laststarted)>3 year),#(rating=0))", called from IncludeSavedSearchQuery.parse_body
+D: 72.051: Query.__init__: Creating query "&(grouping!=ound,|(&(language!=indi,#(3 day<laststarted*(0.01+rating))),&(language=indi,#(3 week<laststarted*(0.01+rating)))))", called from IncludeSavedSearchQuery.parse_body
+D: 72.297: PlaylistModel.set: Filling view model with 236 songs.
+D: 03.569: config.save: Writing config...
+D: 03.622: library.save: Saving all libraries...
+D: 71.936: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 71.937: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 71.937: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 71.937: PlaylistModel.next_ended: Using <Prefer less played>.next_implicit() to get next song
+D: 71.937: PlaycountEqualizer.remaining: Played 0 of 236 song(s)
+D: 71.944: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 71.945: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 71.946: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 72.989: player.gstbe.player.__message: Stream changed
+D: 72.989: GStreamerPlayer._end: End song
+D: 72.989: QLScrobbler.plugin_on_song_ended: Checking against filter 
+E: 72.990: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+D: 72.990: QLSubmitQueue.send_submission: Submitting song(s): Hema chandra/Saindhavi - Naalo Nenena
+E: 72.992: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 73.040: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)
+E: 73.069: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 73.069: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 73.070: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 73.070: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 73.070: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 73.070: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+D: 73.531: QLSubmitQueue._check_submit: Submission status: OK
+D: 75.088: GStreamerPlayer._end: Next song
+D: 75.091: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 75.097: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x0000000008ea7670>
+D: 75.098: QLSubmitQueue.send_nowplaying: Now playing song: Anirudh Ravichander - Po Ve Po [www.AtoZmp3.net]
+D: 75.099: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\po ve po [www.atozmp3.net].mp3
+D: 75.145: WaveformSeekBar._create_waveform: Computing data for each 0.085 seconds
+D: 75.586: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x00000000054ae840 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Changing 2 items.
+D: 75.587: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 75.587: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 75.587: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 75.587: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\po ve po [www.atozmp3.net].mp3
+D: 75.589: WaveformSeekBar._create_waveform: Computing data for each 0.085 seconds
+D: 75.650: QLSubmitQueue._check_submit: Submission status: OK
+D: 03.570: config.save: Writing config...
+D: 03.617: library.save: Saving all libraries...
+D: 26.303: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 26.304: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 26.304: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 26.304: PlaylistModel.next_ended: Using <Prefer less played>.next_implicit() to get next song
+D: 26.304: PlaycountEqualizer.remaining: Played 1 of 236 song(s)
+D: 26.308: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 26.309: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 26.309: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 27.349: player.gstbe.player.__message: Stream changed
+D: 27.349: GStreamerPlayer._end: End song
+D: 27.350: QLScrobbler.plugin_on_song_ended: Checking against filter 
+E: 27.350: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+D: 27.351: QLSubmitQueue.send_submission: Submitting song(s): Anirudh Ravichander - Po Ve Po [www.AtoZmp3.net]
+E: 27.353: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 27.391: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)

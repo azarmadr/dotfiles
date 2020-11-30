@@ -1,0 +1,161 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.19041-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "configparser.py", line 789, in get
+
+  File "__init__.py", line 891, in __getitem__
+
+  File "__init__.py", line 883, in __missing__
+
+KeyError: 'autoupdatetagsinfiles_update_strategy'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 206, in getint
+    return int(self._config.getfloat(section, option))
+
+  File "configparser.py", line 823, in getfloat
+
+  File "configparser.py", line 808, in _get_conv
+
+  File "configparser.py", line 803, in _get
+
+  File "configparser.py", line 792, in get
+
+configparser.NoOptionError: No option 'autoupdatetagsinfiles_update_strategy' in section: 'plugins'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 140, in __invoke
+    handler(*args)
+
+  File "C:\Users\madaz\AppData\Roaming\Quod Libet\plugins\auto_update_tags_in_files.py", line 99, in plugin_on_song_ended
+    strategy = CONFIG.update_strategy
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\__init__.py", line 544, in __get__
+    return self._conf.getint(self._name)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 447, in method
+    return config_getter(
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 214, in getint
+    raise Error(e)
+
+configparser.Error: <unprintable Error object>
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\__init__.py", line 710, in wrap
+    return handler(that, *args)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 111, in cb_handler
+    self.__invoke(librarian, args[-1], *args[:-1])
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 144, in __invoke
+    errorhook()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 188, in errorhook
+    called_in_main_thread()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 183, in called_in_main_thread
+    run_error_dialogs(exc_info, sentry_error)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 85, in run_error_dialogs
+    (str(exc_info[1]).strip() or u"\n").splitlines()[0])
+
+TypeError: __str__ returned non-string (type NoOptionError)
+
+=== LOG:
+D: 3.350: qltk.window.__restore_state: Restore state
+D: 3.350: qltk.window.__restore_position: Restore position
+D: 3.350: qltk.window.__restore_size: Restore size
+D: 3.351: PluginManager.register_handler: Registering handler: 'EventPluginHandler'
+D: 3.351: PluginManager.enable: Enable 'automask'
+D: 3.351: PluginManager.enable: Enable 'Automatic Rating'
+D: 3.351: PluginManager.enable: Enable 'Equalizer'
+D: 3.351: PluginManager.enable: Enable 'QLScrobbler'
+D: 3.353: QLScrobbler.enabled: Plugin enabled - accepting new songs.
+D: 3.354: PluginManager.enable: Enable 'SeekBar'
+D: 3.356: PluginManager.enable: Enable 'Theme Switcher'
+D: 3.468: PluginManager.enable: Enable 'Thumb Rating'
+D: 3.469: PluginManager.enable: Enable 'ToggleMenuBar'
+D: 3.469: PluginManager.enable: Enable 'View Lyrics'
+D: 3.477: PluginManager.enable: Enable 'WaveformSeekBar'
+D: 3.478: PluginManager.enable: Enable 'Animated On-Screen Display'
+D: 3.478: PluginManager.enable: Enable 'Tray Icon'
+D: 3.478: fake.plugins.trayicon.get_indicator_impl: use app indicator: False
+D: 3.528: PluginManager.enable: Enable 'AutoUpdateTagsInFilesUserVersion'
+D: 3.528: PluginManager.register_handler: Registering handler: 'UserInterfacePluginHandler'
+D: 3.529: UserInterfacePluginHandler.plugin_enable: Enabling sidebar for <class 'quodlibet.fake.plugins.thumbrating.ThumbRating'>
+D: 3.529: QuodLibetWindow.add_sidebar_to_layout: Recreating sidebar
+D: 3.530: UserInterfacePluginHandler.plugin_enable: Enabling sidebar for <class 'quodlibet.fake.plugins.viewlyrics.ViewLyrics'>
+D: 3.538: mmkeys.find_active_backend: Trying to find a mmkeys backend
+D: 3.546: mmkeys.find_active_backend: Found 'WinHookBackend'
+D: 3.550: session.init: Trying SessionClient
+D: 3.551: _main.run: Entering quodlibet.main
+D: 4.538: PlaylistModel.set: Filling view model with 237 songs.
+D: 4.540: GStreamerPlayer.go_to: Going to 'd:\\muzk\\english\\taylor swift\\02-folklore_cardigan.mp3'
+D: 4.540: PlaylistMux.go_to: Told to go to 'd:\\muzk\\english\\taylor swift\\02-folklore_cardigan.mp3'
+D: 4.540: QueueModel.go_to: Told to go to None
+D: 4.540: PlaylistModel.go_to: Told to go to 'd:\\muzk\\english\\taylor swift\\02-folklore_cardigan.mp3'
+D: 4.541: GStreamerPlayer._end: End song
+D: 4.541: GStreamerPlayer._end: Next song
+D: 4.602: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 4.602: util.cover.manager.failure: Didn't get cover from EmbeddedCover: This source is incapable of fetching covers
+D: 4.603: util.cover.manager.run: Found local cover from FilesystemCover: <_io.BufferedReader name='d:\\muzk\\english\\taylor swift\\Folder.jpg'>
+D: 4.604: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\taylor swift\02-folklore_cardigan.mp3
+D: 4.629: WaveformSeekBar._create_waveform: Computing data for each 0.080 seconds
+D: 5.015: player.gstbe.player.__message: Recalculate latency
+D: 5.642: qltk.completion.__build_model: Updating tag model for whole library
+D: 5.644: SongFileLibrary.rebuild(<libraries.SongFileLibrary object at 0x00000000054ae840 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Rebuilding, force is False.
+D: 5.648: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x00000000054ae840 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Changing 1 items.
+D: 5.650: qltk.completion.__update_song: Updating tag model for 1 songs
+D: 5.650: qltk.completion.__update_song: Done updating tag model for 1 songs
+D: 5.651: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 5.651: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\taylor swift\02-folklore_cardigan.mp3
+D: 5.653: WaveformSeekBar._create_waveform: Computing data for each 0.080 seconds
+D: 5.910: qltk.completion.__build_model: Done updating tag model for whole library
+D: 6.080: SongFileLibrary.rebuild(<libraries.SongFileLibrary object at 0x00000000054ae840 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Removing 0, changing 0.
+D: 6.080: SongFileLibrary.scan: Scanning 'D:\\muzK'.
+W: 7.927: formats._misc.MusicFile: Error loading 'D:\\muzK\\Blow My Mind.mp3'
+E: 7.929: formats._misc.MusicFile: __init__.py:403:__init__: quodlibet.formats._misc.AudioFileError: can't sync to MPEG frame
+D: 12.304: qltk.prefs.populate_default_rating_model: Choosing #0 (0.00), closest to current 0.00
+D: 16.513: config.save: Writing config...
+D: 19.634: QLSubmitQueue.send_handshake: Sending handshake to service.
+D: 20.299: QLSubmitQueue.send_handshake: Handshake status: OK
+D: 20.299: QLSubmitQueue.send_handshake: Session ID: 323b7d2e0c5dee62e019170daa2306bc, NP URL: http://post.audioscrobbler.com:80/np_1.2, Submit URL: http://post2.audioscrobbler.com:80/protocol_1.2
+D: 20.299: QLSubmitQueue.send_nowplaying: Now playing song: Taylor Swift - cardigan
+D: 20.842: QLSubmitQueue._check_submit: Submission status: OK
+D: 57.584: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 57.585: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 57.585: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 57.585: PlaylistModel.next_ended: Using <Prefer less played>.next_implicit() to get next song
+D: 57.585: PlaycountEqualizer.remaining: Played 0 of 237 song(s)
+D: 57.590: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 57.590: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 57.591: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 58.632: player.gstbe.player.__message: Stream changed
+D: 58.632: GStreamerPlayer._end: End song
+D: 58.633: QLScrobbler.plugin_on_song_ended: Checking against filter 
+D: 58.634: QLSubmitQueue.send_submission: Submitting song(s): Taylor Swift - cardigan
+E: 58.635: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+E: 58.640: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 58.893: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)

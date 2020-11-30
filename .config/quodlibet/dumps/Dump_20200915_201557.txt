@@ -1,0 +1,160 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.19041-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "configparser.py", line 789, in get
+
+  File "__init__.py", line 891, in __getitem__
+
+  File "__init__.py", line 883, in __missing__
+
+KeyError: 'autoupdatetagsinfiles_update_strategy'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 206, in getint
+    return int(self._config.getfloat(section, option))
+
+  File "configparser.py", line 823, in getfloat
+
+  File "configparser.py", line 808, in _get_conv
+
+  File "configparser.py", line 803, in _get
+
+  File "configparser.py", line 792, in get
+
+configparser.NoOptionError: No option 'autoupdatetagsinfiles_update_strategy' in section: 'plugins'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 140, in __invoke
+    handler(*args)
+
+  File "C:\Users\madaz\AppData\Roaming\Quod Libet\plugins\auto_update_tags_in_files.py", line 99, in plugin_on_song_ended
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\__init__.py", line 544, in __get__
+    return self._conf.getint(self._name)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 447, in method
+    return config_getter(
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 214, in getint
+    raise Error(e)
+
+configparser.Error: <unprintable Error object>
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\__init__.py", line 710, in wrap
+    return handler(that, *args)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 111, in cb_handler
+    self.__invoke(librarian, args[-1], *args[:-1])
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 144, in __invoke
+    errorhook()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 188, in errorhook
+    called_in_main_thread()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 183, in called_in_main_thread
+    run_error_dialogs(exc_info, sentry_error)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 85, in run_error_dialogs
+    (str(exc_info[1]).strip() or u"\n").splitlines()[0])
+
+TypeError: __str__ returned non-string (type NoOptionError)
+
+=== LOG:
+D: 52.099: QLSubmitQueue.send_nowplaying: Now playing song: Benny Dayal - Nuvvu Nenu Jattu
+D: 52.100: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\oh my friend.2011\02.nuvvu nenu jattu.mp3
+D: 52.151: WaveformSeekBar._create_waveform: Computing data for each 0.037 seconds
+D: 52.668: QLSubmitQueue._check_submit: Submission status: OK
+D: 54.151: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x0000000004c22bc0 (quodlibet+library+libraries+SongFileLibrary at 0x00000000038e4cc0)>): Changing 2 items.
+D: 54.155: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 54.155: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 54.156: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 54.156: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\oh my friend.2011\02.nuvvu nenu jattu.mp3
+D: 54.163: WaveformSeekBar._create_waveform: Computing data for each 0.037 seconds
+W: 56.673: HTTPRequest._sent: HTTP 404 error in GET request to https://coverartarchive.org/release/7e56365d-7714-47c7-b15d-2b220b2c7a76/front
+D: 56.673: util.cover.manager.failure: Didn't get cover from MusicBrainzCover: Download error (HTTP 404 error in GET request to https://coverartarchive.org/release/7e56365d-7714-47c7-b15d-2b220b2c7a76/front)
+D: 60.131: HTTPRequest._sent: Got HTTP 200 on GET request to https://api.discogs.com/database/search?key=aWfZGjHQvkMcreUECGAp&secret=VlORkklpdvAwJMwxUjNNSgqicjuizJAl&format=CD&per_page=5&type=release&artist=Benny%20Dayal&release_title=Oh%20My%20Friend.
+D: 60.139: util.cover.manager.failure: Didn't get cover from DiscogsCover: No cover was found
+D: 63.621: HTTPRequest._sent: Got HTTP 200 on GET request to https://ws.audioscrobbler.com/2.0?method=album.getinfo&api_key=107db6fd4c1c7f53b1526fafddab2c82&format=json&artist=Benny%20Dayal&album=Oh%20My%20Friend&mbid=7e56365d-7714-47c7-b15d-2b220b2c7a76.
+D: 63.622: LastFMCover._handle_search_response: Album data is not available
+D: 63.623: util.cover.manager.failure: Didn't get cover from LastFMCover: No cover was found
+D: 05.148: Query.__init__: Creating query "&(@(saved: std),@(saved: ft))", called from SearchBarBox._update_query_from
+D: 05.151: Query.__init__: Creating query "|(#((laststarted+lastplayed)*rating>(0.27*skipcount+playcount)*2 week),@(saved:xtra))", called from IncludeSavedSearchQuery.parse_body
+D: 05.153: Query.__init__: Creating query "|(#(playcount+3*skipcount<3),#(rating*playcount*(lastplayed+laststarted)>3 year),#(rating=0))", called from IncludeSavedSearchQuery.parse_body
+D: 05.154: Query.__init__: Creating query "&(grouping!=ound,|(language!=indi,&(language=indi,#(3 week<laststarted*(0.01+rating)))))", called from IncludeSavedSearchQuery.parse_body
+D: 05.838: PlaylistModel.set: Filling view model with 232 songs.
+D: 09.111: config.save: Writing config...
+D: 09.136: library.save: Saving all libraries...
+D: 09.136: SongFileLibrary.save(<libraries.SongFileLibrary object at 0x0000000004c22bc0 (quodlibet+library+libraries+SongFileLibrary at 0x00000000038e4cc0)>): Saving contents to 'C:\\Users\\madaz\\AppData\\Roaming\\Quod Libet\\songs'.
+D: 55.262: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 55.263: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 55.263: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 55.263: PlaylistModel.next_ended: Using <Prefer higher rated>.next_implicit() to get next song
+D: 55.263: OrderWeighted.remaining: Played 0 of 232 song(s)
+D: 55.270: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 55.274: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 55.275: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 56.310: player.gstbe.player.__message: Stream changed
+D: 56.310: GStreamerPlayer._end: End song
+D: 56.312: QLScrobbler.plugin_on_song_ended: Checking against filter 
+D: 56.312: QLSubmitQueue.send_submission: Submitting song(s): Benny Dayal - Nuvvu Nenu Jattu
+E: 56.314: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+E: 56.317: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 56.402: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)
+E: 56.448: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 56.448: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 56.450: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 56.451: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 56.452: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 56.453: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+D: 56.930: QLSubmitQueue._check_submit: Submission status: OK
+D: 58.884: GStreamerPlayer._end: Next song
+D: 58.899: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 58.932: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x0000000008dec850>
+D: 58.934: QLSubmitQueue.send_nowplaying: Now playing song: Doja Cat - Go to Town
+D: 58.935: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\doja cat\amala_01-go to town.mp3
+D: 59.126: WaveformSeekBar._create_waveform: Computing data for each 0.073 seconds
+D: 59.497: QLSubmitQueue._check_submit: Submission status: OK
+D: 60.694: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x0000000004c22bc0 (quodlibet+library+libraries+SongFileLibrary at 0x00000000038e4cc0)>): Changing 2 items.
+D: 60.698: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 60.698: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 60.699: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 60.699: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\doja cat\amala_01-go to town.mp3
+D: 60.710: WaveformSeekBar._create_waveform: Computing data for each 0.073 seconds
+D: 73.157: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 73.158: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 73.158: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 73.158: PlaylistModel.next_ended: Using <Prefer higher rated>.next_implicit() to get next song
+D: 73.158: OrderWeighted.remaining: Played 1 of 232 song(s)
+D: 73.162: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 73.165: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 73.165: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 74.199: player.gstbe.player.__message: Stream changed
+D: 74.199: GStreamerPlayer._end: End song
+D: 74.200: QLScrobbler.plugin_on_song_ended: Checking against filter 
+E: 74.202: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+D: 74.202: QLSubmitQueue.send_submission: Submitting song(s): Doja Cat - Go to Town
+E: 74.206: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 74.258: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)

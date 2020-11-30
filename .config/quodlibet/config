@@ -1,0 +1,268 @@
+[settings]
+bayesian_rating_factor = 0.0
+columns = album,title,artist,genre,~#playcount,~#skipcount,~#rating,~language,~#length,~#laststarted,~#score
+	
+default_rating = 0.0
+jump = false
+language = 
+ratings = 6
+scan = /media/music
+scrollbar_always_visible = false
+
+[memory]
+browser = Paned
+browser_albumlist_maximized = 4
+browser_albumlist_position = 52 52
+browser_albumlist_size_ = 600 400
+browser_audiofeeds_maximized = 4
+browser_audiofeeds_position = 26 26
+browser_audiofeeds_size_ = 600 400
+browser_collectionbrowser_maximized = 4
+browser_collectionbrowser_position = 78 78
+browser_collectionbrowser_size_ = 600 400
+browser_covergrid_maximized = 4
+browser_filesystem_maximized = 4
+browser_filesystem_position = 52 52
+browser_filesystem_size_ = 600 400
+browser_internetradio_maximized = 4
+browser_internetradio_position = 52 52
+browser_internetradio_size_ = 600 400
+browser_panedbrowser_maximized = 4
+browser_panedbrowser_position = 0 0
+browser_panedbrowser_size_ = 1280 715
+browser_playlistsbrowser_maximized = 4
+browser_playlistsbrowser_position = 130 130
+browser_playlistsbrowser_size_ = 600 400
+browser_searchbar_maximized = 4
+browser_searchbar_position = 0 0
+browser_searchbar_size_ = 600 400
+browser_soundcloudbrowser_maximized = 4
+browser_soundcloudbrowser_position = 78 78
+browser_soundcloudbrowser_size_ = 600 400
+browser_tracklist_maximized = 4
+browser_tracklist_position = 130 130
+browser_tracklist_size_ = 600 400
+chooser_dir = /media/music
+column_expands = album,1,title,1,artist,1,genre,1,~language,0,~#laststarted,0
+	
+column_widths = album,-1,title,-1,artist,-1,genre,-1,~language,80,~#laststarted,107
+	
+exfalso_maximized = 0
+exfalso_paned_position = 0.37265625
+exfalso_position = 104 104
+exfalso_size_ = 750 475
+open_browsers = SearchBar
+plugin_prefs_maximized = 4
+plugin_prefs_position = 970 99
+plugin_prefs_size_ = 700 679
+plugin_selection = Animated On-Screen Display
+prefs_page = library
+queue = True
+queue_disable = False
+queue_expanded = False
+queue_keep_songs = False
+queue_position = 0.7905918057663126
+queue_stop_at_end = false
+quodlibet_information_maximized = 0
+quodlibet_information_position = 423 33
+quodlibet_information_size_ = 480 638
+quodlibet_last_active_version = 4.3.0
+quodlibet_maximized = 4
+quodlibet_position = 0 0
+quodlibet_properties_maximized = 4
+quodlibet_properties_pos = 0.22727272727272727
+quodlibet_properties_position = 565 317
+quodlibet_properties_size_ = 1080 706
+quodlibet_properties_size_single = 1100 706
+quodlibet_size_ = 1339 1025
+repeat = False
+repeat_mode = repeat_all
+seek = 0
+shuffle = True
+shuffle_mode = weighted
+shufflequeue = true
+sidebar_pos = 0.9453125
+song = /media/music/hindi/anjaana anjaani.2010/2.hairat.mp3
+sortby = 1~#laststarted
+	
+volume = 0.6030426025390625
+
+[player]
+fallback_gain = 1.0
+gst_buffer = 1.3
+is_playing = True
+pre_amp_gain = 1.0
+replaygain = true
+replaygain_mode = auto
+restore_playing = true
+time_remaining = false
+
+[browsers]
+album_sort = 6
+album_text = true
+albumlist_pos = 0.31197916666666664
+audiofeeds_pos = 0.4015625
+collection_headers = genre 0
+	artist 0
+collectionbrowser_pos = 0.4011090573012939
+covergrid_all = true
+covergrid_magnification = 1.7
+covergrid_pos = 0.378125
+covergrid_wide = true
+equal_pane_width = false
+filesystem = D
+filesystem_pos = 0.1171875
+internetradio_pos = 0.4
+multiple_queries = false
+pane_mode = ColumnMode.WIDE
+pane_selection = 0	.
+	0	.
+	0	.
+	0	.
+	0	.
+	0	.
+	0	.
+panedbrowser_pane_widths = 0.09090909090909091,0.08814589665653495,0.08294314381270904,0.36603221083455345,0.34610917537746805,0.5949820788530465
+	
+panedbrowser_pos = 0.26548672566371684
+panes = ~rating	<#(playcount \<3)|lt 3|<#(playcount \<9)|lt 9|<#(playcount \<27)|lt 27|<#(playcount \<81)|lt 81|above 81>>>>	<#(length \<121)|small|<#(length \<243)|perfect|<#(length \<333)|long|longer>>>	~people	<~year|[b][i]<~year>[/i][/b] - ><album>	genre	~language
+playlistsbrowser_pos = 0.4088541666666667
+query_text = 
+rating_confirm_multiple = true
+search_limit = true
+soundcloud_pos = 0.4
+soundcloud_token = 1-180752-35511313-d2704fd3b15f65
+soundcloud_user_id = 
+
+[__config__]
+version = 0
+
+[albumart]
+force_filename = false
+prefer_embedded = true
+
+[editing]
+alltags = true
+auto_save_changes = true
+save_email = azarshaik454@gmail.com
+save_to_songs = true
+split_on = / , ; | & w.
+
+[plugins]
+active_plugins = Force Write
+	Thumb Rating
+	QLScrobbler
+	musicbrainz-cover
+	Shuffle Playlist
+	ReplayGain
+	Automatic Rating
+	lastfm-cover
+	crossfeed
+	conditional_query
+	WaveformSeekBar
+	AutoUpdateTagsInFilesUserVersion
+	Python Console
+	Equalizer
+	MusicBrainz lookup
+	automask
+	Tray Icon
+	Duplicates
+	editplaycount
+	Search Tag in Wikipedia
+	Last.fm Sync
+	embedded_edit
+	ToggleMenuBar
+	python_query
+	Download Cover Art
+	Download Album Art
+	discogs-cover
+	Theme Switcher
+	Animated On-Screen Display
+	include_saved
+	Remove Playlist Duplicates
+	SeekBar
+	playcounteq
+	exact-rating
+	artwork-url-cover
+animosd_align = 0
+animosd_corners = 0
+animosd_coversize = 145
+animosd_delay = 4800
+animosd_font = Sans Bold 18
+animosd_monitor = 0
+animosd_outline = 0.1 0.1 0.1 0.625
+animosd_pos_x = 0.0
+animosd_pos_y = 0.0
+animosd_shadow = 0.0 0.0 0.0 0.5
+animosd_string = <album|[b]<album>[/b]<discnumber| - Disc <discnumber>><part| - [b]<part>[/b]><tracknumber| - <tracknumber>>>
+	<~rating>[span weight='bold' size='large']<~#rating>[/span]
+	[span weight='bold' size='large']<title>[/span] - <~length><version|
+	[small][i]<version>[/i][/small]><~people|
+	by <~people>>
+autoupdatetagsinfiles_update_strategy = 1
+cover_edit = False
+cover_edit_cmd = gimp
+cover_engine_amazon = True
+cover_engine_discogs = True
+cover_filename = cover.jpg
+cover_fit = True
+cover_resultsmax = 9
+cover_searchraw = True
+crossfeed_fcut = 650
+crossfeed_feed = 90
+download cover art_save_pattern = <albumartist|<albumartist>|<artist>><album| - <album>| - <title>> - front
+duplicates_case_insensitive = true
+duplicates_key_expression = title
+duplicates_remove_punctuation = false
+equalizer_levels = {'Current': [0.0, 0.0, 0.0, 0.0, -5.5, -4.5, 1.0, 4.0, 1.5, 0.0]}
+icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
+lastfmsync_username = azarmadr
+missing_query_include_empty = True
+quodlibet.fake.plugins.gajim_status_accounts = 
+quodlibet.fake.plugins.gajim_status_pattern = <artist> - <title>
+quodlibet.fake.plugins.gajim_status_paused = True
+quodlibet.fake.plugins.gajim_status_statuses = online chat
+quodlibet.fake.plugins.visualisations_executable = 
+randomalbum_added = 0.42978723404255326
+randomalbum_delay = 3
+randomalbum_lastplayed = -0.004255319148936176
+randomalbum_laststarted = 0.02127659574468077
+randomalbum_length = -0.7276595744680852
+randomalbum_playcount = 0.2851063829787235
+randomalbum_rating = 0.25106382978723407
+randomalbum_skipcount = -1.0
+randomalbum_use_weights = 1
+replaygain_process_if = always
+scrobbler_artistpat = 
+scrobbler_password = fm#3Azar
+scrobbler_service = Last.fm
+scrobbler_url = http://proxy.listenbrainz.org/
+scrobbler_username = azarmadr
+shufflebygrouping_grouping = ~grouping~album~albumartist
+shufflebygrouping_grouping_filter = grouping
+skip_songs_threshold = 0.03
+squeezebox_debug = False
+theme switcher_prefer_dark = true
+theme switcher_theme = 
+titlecase_allow_all_caps = True
+titlecase_human_title_case = True
+wiki_tags = album,artist,composer,genre
+
+[rename]
+ascii = false
+colons = true
+diacriticals = true
+lowercase = true
+move_art = true
+remove_empty_dirs = true
+spaces = false
+windows = false
+
+[tagsfrompath]
+split = false
+titlecase = true
+underscores = false
+
+[library]
+refresh_on_start = false
+
