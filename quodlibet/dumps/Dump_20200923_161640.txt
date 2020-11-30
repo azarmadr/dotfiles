@@ -1,0 +1,161 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.19041-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "configparser.py", line 789, in get
+
+  File "__init__.py", line 891, in __getitem__
+
+  File "__init__.py", line 883, in __missing__
+
+KeyError: 'autoupdatetagsinfiles_update_strategy'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 206, in getint
+    return int(self._config.getfloat(section, option))
+
+  File "configparser.py", line 823, in getfloat
+
+  File "configparser.py", line 808, in _get_conv
+
+  File "configparser.py", line 803, in _get
+
+  File "configparser.py", line 792, in get
+
+configparser.NoOptionError: No option 'autoupdatetagsinfiles_update_strategy' in section: 'plugins'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 140, in __invoke
+    handler(*args)
+
+  File "C:\Users\madaz\AppData\Roaming\Quod Libet\plugins\auto_update_tags_in_files.py", line 99, in plugin_on_song_ended
+    strategy = CONFIG.update_strategy
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\__init__.py", line 544, in __get__
+    return self._conf.getint(self._name)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 447, in method
+    return config_getter(
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 214, in getint
+    raise Error(e)
+
+configparser.Error: <unprintable Error object>
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\__init__.py", line 710, in wrap
+    return handler(that, *args)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 111, in cb_handler
+    self.__invoke(librarian, args[-1], *args[:-1])
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 144, in __invoke
+    errorhook()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 188, in errorhook
+    called_in_main_thread()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 183, in called_in_main_thread
+    run_error_dialogs(exc_info, sentry_error)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 85, in run_error_dialogs
+    (str(exc_info[1]).strip() or u"\n").splitlines()[0])
+
+TypeError: __str__ returned non-string (type NoOptionError)
+
+=== LOG:
+D: 85.703: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 85.703: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\ed sheeran\no.6 collaborations project.12.i don't want your money.mp3
+D: 85.708: WaveformSeekBar._create_waveform: Computing data for each 0.068 seconds
+D: 04.649: config.save: Writing config...
+D: 04.684: library.save: Saving all libraries...
+D: 04.650: config.save: Writing config...
+D: 04.685: library.save: Saving all libraries...
+D: 04.685: SongFileLibrary.save(<libraries.SongFileLibrary object at 0x0000000004c24140 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Saving contents to 'C:\\Users\\madaz\\AppData\\Roaming\\Quod Libet\\songs'.
+D: 04.651: config.save: Writing config...
+D: 04.687: library.save: Saving all libraries...
+D: 22.087: QLSubmitQueue.send_nowplaying: Now playing song: Ed Sheeran feat. H.E.R. - I Don't Want Your Money
+D: 22.677: QLSubmitQueue._check_submit: Submission status: OK
+D: 24.944: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 24.944: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 24.944: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 24.945: PlaylistModel.next_ended: Using <Prefer less played>.next_implicit() to get next song
+D: 24.945: PlaycountEqualizer.remaining: Played 1 of 241 song(s)
+D: 24.950: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 24.953: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 24.954: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 26.000: player.gstbe.player.__message: Stream changed
+D: 26.000: GStreamerPlayer._end: End song
+D: 26.001: QLScrobbler.plugin_on_song_ended: Checking against filter 
+E: 26.002: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+D: 26.002: QLSubmitQueue.send_submission: Submitting song(s): Ed Sheeran feat. H.E.R. - I Don't Want Your Money
+E: 26.004: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 26.050: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)
+E: 26.068: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 26.068: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 26.068: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 26.068: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 26.069: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 26.069: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+D: 26.546: QLSubmitQueue._check_submit: Submission status: OK
+D: 44.938: GStreamerPlayer._end: Next song
+D: 44.943: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 44.954: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x0000000008cdaf70>
+D: 44.955: QLSubmitQueue.send_nowplaying: Now playing song: Justin Bieber - Sorry
+D: 44.956: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\justin bieber\purpose.4.sorry.mp3
+D: 45.000: WaveformSeekBar._create_waveform: Computing data for each 0.067 seconds
+D: 45.389: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x0000000004c24140 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Changing 2 items.
+D: 45.392: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 45.392: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 45.393: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 45.393: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\justin bieber\purpose.4.sorry.mp3
+D: 45.398: WaveformSeekBar._create_waveform: Computing data for each 0.067 seconds
+D: 45.500: QLSubmitQueue._check_submit: Submission status: OK
+D: 04.652: config.save: Writing config...
+D: 04.689: library.save: Saving all libraries...
+D: 04.654: config.save: Writing config...
+D: 04.690: library.save: Saving all libraries...
+D: 04.654: config.save: Writing config...
+D: 04.690: library.save: Saving all libraries...
+D: 04.693: SongFileLibrary.save(<libraries.SongFileLibrary object at 0x0000000004c24140 (quodlibet+library+libraries+SongFileLibrary at 0x0000000004c63cc0)>): Saving contents to 'C:\\Users\\madaz\\AppData\\Roaming\\Quod Libet\\songs'.
+D: 04.656: config.save: Writing config...
+D: 04.692: library.save: Saving all libraries...
+D: 04.658: config.save: Writing config...
+D: 04.693: library.save: Saving all libraries...
+D: 04.659: config.save: Writing config...
+D: 04.712: library.save: Saving all libraries...
+D: 59.490: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 59.494: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 59.494: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 59.496: PlaylistModel.next_ended: Using <Prefer less played>.next_implicit() to get next song
+D: 59.497: PlaycountEqualizer.remaining: Played 1 of 240 song(s)
+D: 59.504: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 59.508: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 59.508: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 60.533: player.gstbe.player.__message: Stream changed
+D: 60.534: GStreamerPlayer._end: End song
+D: 60.536: QLScrobbler.plugin_on_song_ended: Checking against filter 
+E: 60.540: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+D: 60.542: QLSubmitQueue.send_submission: Submitting song(s): Justin Bieber - Sorry
+E: 60.559: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 60.623: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)

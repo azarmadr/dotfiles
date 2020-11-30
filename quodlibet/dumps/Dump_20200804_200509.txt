@@ -1,0 +1,90 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.18362-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\faulthandling.py", line 138, in raise_and_clear_error
+    raise FaultHandlerCrash(text)
+
+quodlibet.errorreport.faulthandling.FaultHandlerCrash: Windows fatal exception: stack overflow
+
+=== LOG:
+D: 7.291: PluginManager.enable: Enable 'Duplicates'
+D: 7.291: PluginManager.enable: Enable 'editplaycount'
+D: 7.291: PluginManager.enable: Enable 'exact-rating'
+D: 7.291: PluginManager.enable: Enable 'Force Write'
+D: 7.291: PluginManager.enable: Enable 'Last.fm Sync'
+D: 7.291: PluginManager.enable: Enable 'ReplayGain'
+D: 7.291: PluginManager.enable: Enable 'MusicBrainz lookup'
+D: 7.291: PluginManager.register_handler: Registering handler: 'CoverPluginHandler'
+D: 7.291: PluginManager.enable: Enable 'artwork-url-cover'
+D: 7.291: CoverPluginHandler.plugin_enable: Registered ArtworkUrlCover cover source
+D: 7.291: PluginManager.enable: Enable 'discogs-cover'
+D: 7.291: CoverPluginHandler.plugin_enable: Registered DiscogsCover cover source
+D: 7.291: PluginManager.enable: Enable 'lastfm-cover'
+D: 7.291: CoverPluginHandler.plugin_enable: Registered LastFMCover cover source
+D: 7.291: PluginManager.enable: Enable 'musicbrainz-cover'
+D: 7.291: CoverPluginHandler.plugin_enable: Registered MusicBrainzCover cover source
+D: 7.291: PluginManager.register_handler: Registering handler: 'PlaylistPluginHandler'
+D: 7.291: PluginManager.enable: Enable 'Remove Playlist Duplicates'
+D: 7.291: PluginManager.enable: Enable 'Shuffle Playlist'
+D: 7.291: PluginManager.register_handler: Registering handler: 'QueryPluginHandler'
+D: 7.291: PluginManager.enable: Enable 'conditional_query'
+D: 7.291: PluginManager.enable: Enable 'python_query'
+D: 7.291: PythonQuery.__init__: Initialising
+D: 7.291: PluginManager.enable: Enable 'include_saved'
+D: 7.458: PluginManager.register_handler: Registering handler: 'PluggableOrders'
+D: 7.458: PluginManager.enable: Enable 'playcounteq'
+D: 7.459: PluginManager.register_handler: Registering handler: 'PluggableOrders'
+D: 7.460: qltk.playorder.__compose_order: Updating PlaylistModel order to <Prefer higher rated>
+D: 7.481: GStreamerPlayer.go_to: Going to None
+D: 7.481: PlaylistMux.go_to: Told to go to None
+D: 7.481: QueueModel.go_to: Told to go to None
+D: 7.481: PlaylistModel.go_to: Told to go to None
+D: 7.528: Query.__init__: Creating query "", called from SearchBarBox._update_query_from
+D: 7.528: Query.__init__: Creating query "", called from SearchBarBox._update_query_from
+D: 7.564: qltk.window.__restore_state: Restore state
+D: 7.564: qltk.window.__restore_position: Restore position
+D: 7.564: qltk.window.__restore_size: Restore size
+D: 7.564: PluginManager.register_handler: Registering handler: 'EventPluginHandler'
+D: 7.564: PluginManager.enable: Enable 'automask'
+D: 7.565: PluginManager.enable: Enable 'Automatic Rating'
+D: 7.565: PluginManager.enable: Enable 'Equalizer'
+D: 7.565: PluginManager.enable: Enable 'QLScrobbler'
+D: 7.567: QLScrobbler.enabled: Plugin enabled - accepting new songs.
+D: 7.567: PluginManager.enable: Enable 'SeekBar'
+D: 7.568: PluginManager.enable: Enable 'Theme Switcher'
+D: 7.643: PluginManager.enable: Enable 'Thumb Rating'
+D: 7.643: PluginManager.enable: Enable 'ToggleMenuBar'
+D: 7.643: PluginManager.enable: Enable 'View Lyrics'
+D: 7.651: PluginManager.enable: Enable 'WaveformSeekBar'
+D: 7.652: PluginManager.enable: Enable 'Animated On-Screen Display'
+D: 7.652: PluginManager.enable: Enable 'Tray Icon'
+D: 7.652: fake.plugins.trayicon.get_indicator_impl: use app indicator: False
+D: 7.709: PluginManager.register_handler: Registering handler: 'UserInterfacePluginHandler'
+D: 7.709: UserInterfacePluginHandler.plugin_enable: Enabling sidebar for <class 'quodlibet.fake.plugins.thumbrating.ThumbRating'>
+D: 7.709: QuodLibetWindow.add_sidebar_to_layout: Recreating sidebar
+D: 7.710: UserInterfacePluginHandler.plugin_enable: Enabling sidebar for <class 'quodlibet.fake.plugins.viewlyrics.ViewLyrics'>
+D: 7.741: mmkeys.find_active_backend: Trying to find a mmkeys backend
+D: 7.765: mmkeys.find_active_backend: Found 'WinHookBackend'
+D: 7.780: session.init: Trying SessionClient
+D: 7.780: _main.run: Entering quodlibet.main
+D: 9.364: qltk.window.__restore_state: Restore state
+D: 9.364: qltk.window.__restore_position: Restore position
+D: 9.364: qltk.window.__restore_size: Restore size
+D: 9.767: PlaylistModel.set: Filling view model with 110 songs.
+D: 9.768: GStreamerPlayer.go_to: Going to 'd:\\muzk\\sam smith\\stay with me\\01 stay with me.mp3'
+D: 9.768: PlaylistMux.go_to: Told to go to 'd:\\muzk\\sam smith\\stay with me\\01 stay with me.mp3'
+D: 9.768: QueueModel.go_to: Told to go to None
+D: 9.768: PlaylistModel.go_to: Told to go to 'd:\\muzk\\sam smith\\stay with me\\01 stay with me.mp3'
+D: 9.769: GStreamerPlayer._end: End song
+D: 9.769: GStreamerPlayer._end: Next song
+D: 9.964: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 9.976: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x000000000b398d60>
+D: 9.977: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\sam smith\stay with me\01 stay with me.mp3
+D: 10.224: WaveformSeekBar._create_waveform: Computing data for each 0.058 seconds
+E: 10.282: errorreport.main.errorhook: faulthandling.py:138:raise_and_clear_error: quodlibet.errorreport.faulthandling.FaultHandlerCrash: Windows fatal exception: stack overflow

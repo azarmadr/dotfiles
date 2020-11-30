@@ -1,0 +1,93 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.18362-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\__init__.py", line 710, in wrap
+    return handler(that, *args)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\cbes.py", line 172, in __finish
+    iter = cbes_model.get_iter_first()
+
+AttributeError: 'NoneType' object has no attribute 'get_iter_first'
+
+=== LOG:
+D: 50.525: GStreamerPlayer.go_to: Going to <Gtk.TreeIter object at 0x0000000004156e80 (GtkTreeIter at 0x000000000ea26be0)>
+D: 50.525: PlaylistMux.go_to: Told to go to <Gtk.TreeIter object at 0x0000000004156e80 (GtkTreeIter at 0x000000000ea26be0)>
+D: 50.525: QueueModel.go_to: Told to go to None
+D: 50.525: PlaylistModel.go_to: Told to go to <Gtk.TreeIter object at 0x0000000004156e80 (GtkTreeIter at 0x000000000ea26be0)>
+D: 50.526: GStreamerPlayer._end: End song
+D: 50.526: GStreamerPlayer._end: Next song
+D: 50.613: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 50.620: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x00000000085f2610>
+D: 50.621: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\ariana grande & the weeknd\my everything.9.love me harder.mp3
+D: 50.656: WaveformSeekBar._create_waveform: Computing data for each 0.079 seconds
+D: 50.698: QLSubmitQueue.send_nowplaying: Now playing song: Ariana Grande & The Weeknd - Love Me Harder
+D: 50.722: player.gstbe.player.__message: Recalculate latency
+D: 50.861: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x000000000566c940 (quodlibet+library+libraries+SongFileLibrary at 0x0000000003874cc0)>): Changing 1 items.
+D: 50.864: qltk.completion.__update_song: Updating tag model for 1 songs
+D: 50.864: qltk.completion.__update_song: Done updating tag model for 1 songs
+D: 50.865: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 50.865: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\ariana grande & the weeknd\my everything.9.love me harder.mp3
+D: 50.869: WaveformSeekBar._create_waveform: Computing data for each 0.079 seconds
+D: 50.875: library.libraries.__changed: Updating affected albums for 1 items
+D: 52.664: QLSubmitQueue._check_submit: Submission status: OK
+D: 35.477: Query.__init__: Creating query "|(&(#(playcount<9),#(skipcount<3)),#(laststarted> 3 months))", called from Query.validator
+D: 43.395: Query.__init__: Creating query "|(&(#(playcountskipcount<3)),#(laststarted> 3 months))", called from Query.validator
+D: 43.396: Query.__init__: Creating query "|(&(#(playcount*skipcount<3)),#(laststarted> 3 months))", called from Query.validator
+D: 84.906: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 84.907: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 84.907: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 84.907: PlaylistModel.next_ended: Using <Random>.next_implicit() to get next song
+D: 84.908: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 84.908: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 84.909: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 85.947: player.gstbe.player.__message: Stream changed
+D: 85.947: GStreamerPlayer._end: End song
+D: 85.948: QLScrobbler.plugin_on_song_ended: Checking against filter 
+D: 85.948: QLSubmitQueue.send_submission: Submitting song(s): Ariana Grande & The Weeknd - Love Me Harder
+D: 85.955: GStreamerPlayer._end: Next song
+D: 85.959: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 85.967: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x00000000085f2550>
+D: 85.969: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\aparichithudu_\1.o sukumari.mp3
+D: 86.012: WaveformSeekBar._create_waveform: Computing data for each 0.120 seconds
+D: 86.457: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x000000000566c940 (quodlibet+library+libraries+SongFileLibrary at 0x0000000003874cc0)>): Changing 2 items.
+D: 86.459: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 86.459: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 86.460: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 86.460: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\telugu\aparichithudu_\1.o sukumari.mp3
+D: 86.468: WaveformSeekBar._create_waveform: Computing data for each 0.120 seconds
+D: 86.474: library.libraries.__changed: Updating affected albums for 2 items
+D: 87.388: QLSubmitQueue._check_submit: Submission status: OK
+D: 87.389: QLSubmitQueue.send_nowplaying: Now playing song: Shankar Mahadevan & Harini - O Sukumari
+D: 88.678: QLSubmitQueue._check_submit: Submission status: OK
+D: 93.029: Query.__init__: Creating query "", called from Query.validator
+D: 18.175: Query.__init__: Creating query "", called from Query.validator
+D: 18.175: Query.__init__: Creating query "&(#(laststarted*rating>1 week * skipcount) ,#(lastplayed*rating>1 hour * playcount))", called from Query.validator
+D: 18.189: Query.__init__: Creating query "&(#(laststarted*rating>1 week * skipcount) ,#(lastplayed*rating>1 hour * playcount))", called from Query.validator
+D: 34.670: config.save: Writing config...
+D: 34.800: library.save: Saving all libraries...
+D: 35.877: Query.__init__: Creating query "&(#(laststarted*rating>3*skipcount days),#(lastplayed*rating>27 hours),#(playcount>3))", called from Query.validator
+D: 39.343: Query.__init__: Creating query "&(#(laststarted*rating>1 week * skipcount) ,#(lastplayed*rating>1 hour * playcount))", called from Query.validator
+D: 44.918: Query.__init__: Creating query "&(|(&(#(skipcount<1) ,#(rating>0.27)),#(laststarted>3 weeks)),#(lastplayed>3 days),#(playcount<=3))", called from Query.validator
+D: 46.198: Query.__init__: Creating query "|(&(#(playcount<9),#(skipcount<3)),#(laststarted> 3 months))", called from Query.validator
+D: 50.721: Query.__init__: Creating query "|(@(saved:gt3),@(saved: lt3))", called from Query.validator
+D: 50.722: Query.__init__: Creating query "&(#(laststarted*rating>3*skipcount days),#(lastplayed*rating>27 hours),#(playcount>3))", called from IncludeSavedSearchQuery.parse_body
+D: 50.723: Query.__init__: Creating query "&(|(&(#(skipcount<1) ,#(rating>0.27)),#(laststarted>3 weeks)),#(lastplayed>3 days),#(playcount<=3))", called from IncludeSavedSearchQuery.parse_body
+D: 51.915: Query.__init__: Creating query "|(&(#(playcount<9),#(skipcount<3)),#(laststarted> 3 months))", called from Query.validator
+D: 59.685: Query.__init__: Creating query "&(@(python: Random((int(_ts / 60),a)).random() < 0.027),@(saved: std),@(saved: ft))", called from Query.validator
+D: 59.686: Query.__init__: Creating query "|(@(saved:gt3),@(saved: lt3))", called from IncludeSavedSearchQuery.parse_body
+D: 59.687: Query.__init__: Creating query "&(#(laststarted*rating>3*skipcount days),#(lastplayed*rating>27 hours),#(playcount>3))", called from IncludeSavedSearchQuery.parse_body
+D: 59.687: Query.__init__: Creating query "&(|(&(#(skipcount<1) ,#(rating>0.27)),#(laststarted>3 weeks)),#(lastplayed>3 days),#(playcount<=3))", called from IncludeSavedSearchQuery.parse_body
+D: 59.688: Query.__init__: Creating query "|(&(#(playcount<9),#(skipcount<3)),#(laststarted> 3 months))", called from IncludeSavedSearchQuery.parse_body
+D: 71.523: Query.__init__: Creating query "&(#(laststarted*rating>1 week * skipcount) ,#(lastplayed*rating>1 hour * playcount))", called from Query.validator
+D: 79.231: Query.__init__: Creating query "&(@(python: Random((int(_ts / 60),a)).random() < 0.027),@(saved: std),@(saved: ft))", called from Query.validator
+D: 79.231: Query.__init__: Creating query "|(@(saved:gt3),@(saved: lt3))", called from IncludeSavedSearchQuery.parse_body
+D: 79.232: Query.__init__: Creating query "&(#(laststarted*rating>3*skipcount days),#(lastplayed*rating>27 hours),#(playcount>3))", called from IncludeSavedSearchQuery.parse_body
+D: 79.232: Query.__init__: Creating query "&(|(&(#(skipcount<1) ,#(rating>0.27)),#(laststarted>3 weeks)),#(lastplayed>3 days),#(playcount<=3))", called from IncludeSavedSearchQuery.parse_body
+D: 79.233: Query.__init__: Creating query "|(&(#(playcount<9),#(skipcount<3)),#(laststarted> 3 months))", called from IncludeSavedSearchQuery.parse_body
+E: 02.166: errorreport.main.errorhook: cbes.py:172:__finish: AttributeError: 'NoneType' object has no attribute 'get_iter_first'

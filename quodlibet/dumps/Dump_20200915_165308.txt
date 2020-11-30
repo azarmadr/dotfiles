@@ -1,0 +1,162 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.19041-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "configparser.py", line 789, in get
+
+  File "__init__.py", line 891, in __getitem__
+
+  File "__init__.py", line 883, in __missing__
+
+KeyError: 'autoupdatetagsinfiles_update_strategy'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 206, in getint
+    return int(self._config.getfloat(section, option))
+
+  File "configparser.py", line 823, in getfloat
+
+  File "configparser.py", line 808, in _get_conv
+
+  File "configparser.py", line 803, in _get
+
+  File "configparser.py", line 792, in get
+
+configparser.NoOptionError: No option 'autoupdatetagsinfiles_update_strategy' in section: 'plugins'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 140, in __invoke
+    handler(*args)
+
+  File "C:\Users\madaz\AppData\Roaming\Quod Libet\plugins\auto_update_tags_in_files.py", line 99, in plugin_on_song_ended
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\__init__.py", line 544, in __get__
+    return self._conf.getint(self._name)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 447, in method
+    return config_getter(
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\config.py", line 214, in getint
+    raise Error(e)
+
+configparser.Error: <unprintable Error object>
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\util\__init__.py", line 710, in wrap
+    return handler(that, *args)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 111, in cb_handler
+    self.__invoke(librarian, args[-1], *args[:-1])
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\plugins\events.py", line 144, in __invoke
+    errorhook()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 188, in errorhook
+    called_in_main_thread()
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 183, in called_in_main_thread
+    run_error_dialogs(exc_info, sentry_error)
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\main.py", line 85, in run_error_dialogs
+    (str(exc_info[1]).strip() or u"\n").splitlines()[0])
+
+TypeError: __str__ returned non-string (type NoOptionError)
+
+=== LOG:
+E: 49.089: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 49.118: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)
+E: 49.140: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 49.140: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 49.141: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 49.141: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+E: 49.142: PrintHandler.emit('manager.transform'): __repr__ returned non-string (type NoOptionError)
+E: 49.142: PrintHandler.emit('manager.transform'): manager.py:76:transform: TypeError: __repr__ returned non-string (type NoOptionError)
+D: 91.899: QLSubmitQueue.send_handshake: Sending handshake to service.
+D: 92.643: QLSubmitQueue.send_handshake: Handshake status: OK
+D: 92.643: QLSubmitQueue.send_handshake: Session ID: 1b3d207c11b30ba9220600b9b555c0b3, NP URL: http://post.audioscrobbler.com:80/np_1.2, Submit URL: http://post2.audioscrobbler.com:80/protocol_1.2
+D: 92.643: QLSubmitQueue.send_submission:
+    Submitting song(s): Harry Styles - Sign of the Times
+    	Priya Hemesh & Suchith Suresan - Julai
+D: 93.360: QLSubmitQueue._check_submit: Submission status: OK
+D: 93.360: QLSubmitQueue.send_nowplaying: Now playing song: Priya Hemesh & Suchith Suresan - Julai
+D: 93.974: QLSubmitQueue._check_submit: Submission status: OK
+D: 10.057: GStreamerPlayer._end: Next song
+D: 10.059: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 10.073: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x000000000a143940>
+D: 10.075: QLSubmitQueue.send_nowplaying: Now playing song: Ally Brooke feat. Tyga - Low Key
+D: 10.076: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\ally brooke\low key.mp3
+D: 10.124: WaveformSeekBar._create_waveform: Computing data for each 0.067 seconds
+D: 10.667: QLSubmitQueue._check_submit: Submission status: OK
+D: 10.784: SongFileLibrary._changed(<libraries.SongFileLibrary object at 0x0000000004c22bc0 (quodlibet+library+libraries+SongFileLibrary at 0x00000000038e4cc0)>): Changing 2 items.
+D: 10.785: qltk.completion.__update_song: Updating tag model for 2 songs
+D: 10.785: qltk.completion.__update_song: Done updating tag model for 2 songs
+D: 10.786: ViewLyrics.plugin_on_changed: Active song changed, reloading lyrics
+D: 10.786: ViewLyrics.plugin_on_song_started: Looking for lyrics for d:\muzk\english\ally brooke\low key.mp3
+D: 10.792: WaveformSeekBar._create_waveform: Computing data for each 0.067 seconds
+D: 17.332: config.save: Writing config...
+D: 17.370: library.save: Saving all libraries...
+D: 17.370: SongFileLibrary.save(<libraries.SongFileLibrary object at 0x0000000004c22bc0 (quodlibet+library+libraries+SongFileLibrary at 0x00000000038e4cc0)>): Saving contents to 'C:\\Users\\madaz\\AppData\\Roaming\\Quod Libet\\songs'.
+D: 17.334: config.save: Writing config...
+D: 17.371: library.save: Saving all libraries...
+D: 17.335: config.save: Writing config...
+D: 17.339: library.save: Saving all libraries...
+D: 17.336: config.save: Writing config...
+D: 17.344: library.save: Saving all libraries...
+D: 17.336: config.save: Writing config...
+D: 17.354: library.save: Saving all libraries...
+D: 17.338: config.save: Writing config...
+D: 17.374: library.save: Saving all libraries...
+D: 17.339: config.save: Writing config...
+D: 17.380: library.save: Saving all libraries...
+D: 17.340: config.save: Writing config...
+D: 17.376: library.save: Saving all libraries...
+D: 17.342: config.save: Writing config...
+D: 17.380: library.save: Saving all libraries...
+D: 17.343: config.save: Writing config...
+D: 17.388: library.save: Saving all libraries...
+D: 17.344: config.save: Writing config...
+D: 17.383: library.save: Saving all libraries...
+D: 17.344: config.save: Writing config...
+D: 17.388: library.save: Saving all libraries...
+D: 17.345: config.save: Writing config...
+D: 17.377: library.save: Saving all libraries...
+D: 59.219: Query.__init__: Creating query "&(@(saved: std),@(saved: ft))", called from SearchBarBox._update_query_from
+D: 59.224: Query.__init__: Creating query "|(#((laststarted+lastplayed)*rating>(0.27*skipcount+playcount)*2 week),@(saved:xtra))", called from IncludeSavedSearchQuery.parse_body
+D: 59.225: Query.__init__: Creating query "|(#(playcount+3*skipcount<3),#(rating*playcount*(lastplayed+laststarted)>3 year),#(rating=0))", called from IncludeSavedSearchQuery.parse_body
+D: 59.226: Query.__init__: Creating query "&(grouping!=ound,|(language!=indi,&(language=indi,#(3 week<laststarted*(0.01+rating)))))", called from IncludeSavedSearchQuery.parse_body
+D: 59.487: PlaylistModel.set: Filling view model with 235 songs.
+D: 03.607: player.gstbe.player.__about_to_finish: About to finish (async)
+D: 03.608: player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: 03.608: player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: 03.609: PlaylistModel.next_ended: Using <Prefer higher rated>.next_implicit() to get next song
+D: 03.609: OrderWeighted.remaining: Played 0 of 235 song(s)
+D: 03.612: player.gstbe.player.__about_to_finish_sync: ..done.
+D: 03.613: player.gstbe.player.__about_to_finish: About to finish (async): setting uri
+D: 03.613: player.gstbe.player.__about_to_finish: About to finish (async): done
+D: 04.657: player.gstbe.player.__message: Stream changed
+D: 04.657: GStreamerPlayer._end: End song
+D: 04.658: QLScrobbler.plugin_on_song_ended: Checking against filter 
+E: 04.660: plugins.events.__invoke: Error during plugin_on_song_ended on <class 'quodlibet.fake.plugins.auto_update_tags_in_files.AutoUpdateTagsInFiles'>
+D: 04.661: QLSubmitQueue.send_submission: Submitting song(s): Ally Brooke feat. Tyga - Low Key
+E: 04.671: errorreport.main.errorhook: config.py:214:getint: configparser.Error: <unprintable Error object>
+E: 04.782: errorreport.main.errorhook: main.py:85:run_error_dialogs: TypeError: __str__ returned non-string (type NoOptionError)

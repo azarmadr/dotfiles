@@ -1,0 +1,10 @@
+D:\muzk\Music\<language>\<tracknumber=1/1||<album>-><tracknumber><(title!=heme)|_<title>>
+m
+D:\muzk\<language>\<album>.<~year>\<tracknumber=1/1||<tracknumber>.><title>
+tel or hin
+D:\muzk\English\<artist>\<tracknumber=1/1||<album>_<tracknumber>-><title>
+eng
+/media/music/<language>/<album>.<~year>/<tracknumber=1/1||<tracknumber|<tracknumber>.>><title>
+th arch
+/media/music/<language>/<album>.<~year>/<tracknumber=1/1||<tracknumber>><title>
+tel

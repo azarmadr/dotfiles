@@ -1,0 +1,5 @@
+/media/music/<language>/<album>.<~year>/<tracknumber=1/1||<tracknumber>><title>
+
+/media/music/<language>/<album>.<~year>/<tracknumber=1/1||<tracknumber|<tracknumber>.>><title>
+/media/music/<language>/<artist>/<album>.<~#track>-<title>
+/media/music/<title>

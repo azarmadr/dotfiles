@@ -1,0 +1,115 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.3.0
+Mutagen 1.44.0
+Python 3.8.1 (default, Dec 24 2019, 11:55:37)  [GCC 9.2.0 64 bit (AMD64)] win32
+Platform Windows-10-10.0.18362-SP0
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\errorreport\faulthandling.py", line 138, in raise_and_clear_error
+    raise FaultHandlerCrash(text)
+
+quodlibet.errorreport.faulthandling.FaultHandlerCrash: Windows fatal exception: access violation
+
+Stack (most recent call first):
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\views.py", line 113 in connect_view
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\views.py", line 1133 in __init__
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\scanbox.py", line 31 in __init__
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\prefs.py", line 696 in __init__
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\prefs.py", line 749 in __init__
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\songlist.py", line 1167 in __add_custom_column
+  File "Gtk.py", line 1630 in main
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\_main.py", line 377 in run
+  File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\main.py", line 202 in main
+  File "<string>", line 1 in <module>
+
+=== LOG:
+D: 37.965: ModuleScanner.rescan: Rescanning..
+D: 44.402: ModuleScanner.rescan: Rescanning done: 82 added, 0 removed, 15 error(s)
+D: 44.406: PluginManager.rescan: Rescanning done.
+D: 44.406: PluginManager.register_handler: Registering handler: 'EditTagsPluginHandler'
+D: 44.406: PluginManager.register_handler: Registering handler: 'RenameFilesPluginHandler'
+D: 44.406: PluginManager.register_handler: Registering handler: 'TagsFromPathPluginHandler'
+D: 44.406: PluginManager.register_handler: Registering handler: 'GStreamerPlayer'
+D: 44.436: PluginManager.register_handler: Registering handler: 'SongsMenuPluginHandler'
+D: 44.436: PluginManager.enable: Enable 'Download Album Art'
+D: 44.437: PluginManager.enable: Enable 'Download Cover Art'
+D: 44.437: PluginManager.enable: Enable 'exact-rating'
+D: 44.437: PluginManager.enable: Enable 'Force Write'
+D: 44.437: PluginManager.enable: Enable 'Export to HTML'
+D: 44.437: PluginManager.enable: Enable 'ExportMeta'
+D: 44.437: PluginManager.enable: Enable 'ImportMeta'
+D: 44.437: PluginManager.enable: Enable 'Last.fm Sync'
+D: 44.437: PluginManager.enable: Enable 'MusicBrainz lookup'
+D: 44.437: PluginManager.register_handler: Registering handler: 'CoverPluginHandler'
+D: 44.437: PluginManager.enable: Enable 'artwork-url-cover'
+D: 44.437: CoverPluginHandler.plugin_enable: Registered ArtworkUrlCover cover source
+D: 44.437: PluginManager.enable: Enable 'discogs-cover'
+D: 44.438: CoverPluginHandler.plugin_enable: Registered DiscogsCover cover source
+D: 44.438: PluginManager.enable: Enable 'lastfm-cover'
+D: 44.438: CoverPluginHandler.plugin_enable: Registered LastFMCover cover source
+D: 44.438: PluginManager.enable: Enable 'musicbrainz-cover'
+D: 44.438: CoverPluginHandler.plugin_enable: Registered MusicBrainzCover cover source
+D: 44.438: PluginManager.register_handler: Registering handler: 'PlaylistPluginHandler'
+D: 44.438: PluginManager.enable: Enable 'Remove Playlist Duplicates'
+D: 44.438: PluginManager.register_handler: Registering handler: 'QueryPluginHandler'
+D: 45.363: PluginManager.register_handler: Registering handler: 'PluggableOrders'
+D: 45.364: PluginManager.enable: Enable 'playcounteq'
+D: 45.366: PluginManager.register_handler: Registering handler: 'PluggableOrders'
+D: 45.369: qltk.playorder.__compose_order: Updating PlaylistModel order to <Prefer less played>
+D: 45.619: GStreamerPlayer.go_to: Going to None
+D: 45.620: PlaylistMux.go_to: Told to go to None
+D: 45.620: QueueModel.go_to: Told to go to None
+D: 45.620: PlaylistModel.go_to: Told to go to None
+D: 45.752: Query.__init__: Creating query "", called from MultiSearchBarBox._update_query_from
+D: 45.754: Query.__init__: Creating query "", called from MultiSearchBarBox._update_query_from
+D: 45.754: Query.__init__: Creating query "", called from MultiSearchBarBox._update_query_from
+D: 45.758: qltk.window.__restore_state: Restore state
+D: 45.758: qltk.window.__restore_position: Restore position
+D: 45.758: qltk.window.__restore_size: Restore size
+D: 45.774: PluginManager.register_handler: Registering handler: 'EventPluginHandler'
+D: 45.774: PluginManager.enable: Enable 'automask'
+D: 45.796: PluginManager.enable: Enable 'Automatic Rating'
+D: 45.797: PluginManager.enable: Enable 'QLScrobbler'
+D: 45.801: QLScrobbler.enabled: Plugin enabled - accepting new songs.
+D: 45.801: PluginManager.enable: Enable 'SeekBar'
+D: 45.803: PluginManager.enable: Enable 'SynchronizedLyrics'
+D: 45.868: PluginManager.enable: Enable 'Thumb Rating'
+D: 45.870: PluginManager.enable: Enable 'ToggleMenuBar'
+D: 45.870: PluginManager.enable: Enable 'WaveformSeekBar'
+D: 45.872: PluginManager.enable: Enable 'Animated On-Screen Display'
+D: 45.872: PluginManager.enable: Enable 'Tray Icon'
+D: 45.873: fake.plugins.trayicon.get_indicator_impl: use app indicator: False
+D: 46.998: PluginManager.register_handler: Registering handler: 'UserInterfacePluginHandler'
+D: 46.998: UserInterfacePluginHandler.plugin_enable: Enabling sidebar for <class 'quodlibet.fake.plugins.thumbrating.ThumbRating'>
+D: 46.998: QuodLibetWindow.add_sidebar_to_layout: Recreating sidebar
+D: 47.149: mmkeys.find_active_backend: Trying to find a mmkeys backend
+D: 47.344: mmkeys.find_active_backend: Found 'WinHookBackend'
+D: 47.418: session.init: Trying SessionClient
+D: 47.418: _main.run: Entering quodlibet.main
+D: 58.617: PlaylistModel.set: Filling view model with 1845 songs.
+D: 58.659: GStreamerPlayer.go_to: Going to 'd:\\muzk\\english\\gesaffelstein & the weeknd\\lost in the fire.mp3'
+D: 58.659: PlaylistMux.go_to: Told to go to 'd:\\muzk\\english\\gesaffelstein & the weeknd\\lost in the fire.mp3'
+D: 58.659: QueueModel.go_to: Told to go to None
+D: 58.659: PlaylistModel.go_to: Told to go to 'd:\\muzk\\english\\gesaffelstein & the weeknd\\lost in the fire.mp3'
+D: 58.671: GStreamerPlayer._end: End song
+D: 58.680: GStreamerPlayer._end: Next song
+D: 59.949: util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: 60.191: util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x000000000a5005b0>
+D: 60.194: SynchronizedLyrics._build_data: Checking for lyrics file d:\muzk\english\gesaffelstein & the weeknd\lost in the fire.lrc
+D: 63.549: WaveformSeekBar._create_waveform: Computing data for each 0.067 seconds
+E: 64.421: errorreport.main.errorhook:
+    faulthandling.py:138:raise_and_clear_error: quodlibet.errorreport.faulthandling.FaultHandlerCrash: Windows fatal exception: access violation
+    
+    Stack (most recent call first):
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\views.py", line 113 in connect_view
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\views.py", line 1133 in __init__
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\scanbox.py", line 31 in __init__
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\prefs.py", line 696 in __init__
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\prefs.py", line 749 in __init__
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\qltk\songlist.py", line 1167 in __add_custom_column
+      File "Gtk.py", line 1630 in main
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\_main.py", line 377 in run
+      File "C:\Program Files\Quod Libet\lib\python3.8\site-packages\quodlibet\main.py", line 202 in main
+      File "<string>", line 1 in <module>
