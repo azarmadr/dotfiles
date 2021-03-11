@@ -16,42 +16,21 @@ so ~/.config/nvim/coc-fu.vim
 so ~/.config/nvim/rnvimr.vim
 
 "_auto_commands
-augroup md_bindings
-   autocmd! md_bindings
-   autocmd Filetype markdown inoremap <buffer> <silent> ( ()<Left>
-   autocmd Filetype markdown inoremap <buffer> <silent> [ []<Left>
-   autocmd Filetype markdown inoremap <buffer> <silent> < <><Left>
-   autocmd Filetype markdown inoremap <buffer> <silent> __ ____<Left><Left>
-   autocmd Filetype markdown inoremap <buffer> <silent> <b  <br>
+augroup helpfiles
+  au!
+  au BufRead,BufEnter */doc/* wincmd L
 augroup END
-autocmd BufNewFile,BufRead,BufEnter *.do    set syntax=tcsh
-autocmd BufNewFile,BufRead,BufEnter *.V     set syntax=verilog
-autocmd BufNewFile,BufRead,BufEnter files.f set syntax=off
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
-
-"_let_options
-let g:session_autosave = 'no'
-let g:python3_host_prog = '/usr/bin/python3.8'
-let g:LanguageClient_loadSettings = 1
-let g:LanguageClient_serverCommands = {
-   \ 'rust'          : ['rust-analyzer'],
-   \ 'systemverilog' : ['svls'],
-   \ 'cpp'           : ['clangd', '-background-index'],
-   \ 'c'             : ['clangd', '-background-index'],
-   \ 'h'             : ['clangd', '-background-index'],
-   \ }
+autocmd BufNewFile,BufRead          Makefile set noexpandtab
+autocmd BufNewFile,BufRead,BufEnter *.do     set syntax=tcsh
+autocmd BufNewFile,BufRead,BufEnter *.V      set syntax=verilog
+autocmd BufNewFile,BufRead,BufEnter files.f  set syntax=off
 
 "_map_keys
-inoremap <C-"> <C-Left><C-Right>
-nnoremap <C-"> <C-Left><C-Right>
+map silent <S-Insert> "+p
+imap silent <S-Insert> "+gpa
+map! <C-S-Insert> <C-R>+
 vnoremap <c-c> "+y
 vnoremap <c-x> "+x
-map! <S-Insert>  <C-R>+
 nnoremap <c-S-s> :w<CR>
 inoremap <c-S-s> <Esc>:w<CR>a
 vnoremap <c-S-s> <Esc>:w<CR>
@@ -66,15 +45,16 @@ nnoremap <C-Left>  <C-W><Left>
 nnoremap <C-Up>    <C-W><Up>
 nnoremap <C-Down>  <C-W><Down>
 nnoremap <C-Right> <C-W><Right>
-nnoremap <C-h> <C-W>H
-nnoremap <C-k> <C-W>K
-nnoremap <C-j> <C-W>J
-nnoremap <C-l> <C-W>L
+nnoremap <C-h> <C-W><Left>
+nnoremap <C-k> <C-W><Up>
+nnoremap <C-j> <C-W><Down>
+nnoremap <C-l> <C-W><Right>
 nnoremap gf <c-w>f<c-w>L
 nnoremap gF <c-w>gf
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 tnoremap <Esc> <C-\><C-n>
+nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?0:1 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
