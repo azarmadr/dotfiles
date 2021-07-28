@@ -1,0 +1,54 @@
+[scripts.beck-on]
+alias = 'beck-on'
+command = '''
+#!/bin/sh
+
+active_window_id=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
+active_window=$(xprop -id "$active_window_id" WM_CLASS)
+cmd="$1 & disown"
+wn=$2
+echo $wn
+case "$active_window" in
+    *$wn* )
+        xdotool windowminimize "$active_window_id"
+        ;;
+    * )
+        # find $wn's window and make it active or if it's not running we'll launch it
+        wmctrl -vxR $wn || ( eval $cmd; sleep 0.2 && wmctrl -vxR $wn )
+        ;;
+
+esac
+'''
+description = 'create apps that can be beckoned and hidden, like a drop down'
+tags = ['bash,config']
+
+[scripts.ranger-set-icon]
+alias = 'ranger-set-icon'
+command = '''
+#!/bin/bash
+
+### EDIT THESE VALUES #########################################################
+export EDITOR=nvim
+APP="alacritty -t Ranger -e ranger"       # path to real executable
+ICON="/usr/share/pixmaps/ranger.png"      # icon file - only png supported
+WAIT=1                                    # wait time for application window to display - adjust to suit
+###############################################################################
+
+###############################################################################
+### DON'T CHANGE ANYTHING BELOW
+###############################################################################
+function change-panel-icon {
+
+    sleep $WAIT
+    activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
+    activeWinId="${activeWinLine:40}"
+
+    xseticon -id "$activeWinId" "$ICON"
+}
+
+$APP & change-panel-icon
+'''
+description = 'set icon after launching'
+tags = ['bash,config']
+
+[default]
