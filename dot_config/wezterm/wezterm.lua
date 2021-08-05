@@ -15,7 +15,11 @@ wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
 end)
 
 return {
+  {{ if eq chezmoi.os "linux" }}
+  default_prog = {'/usr/bin/fish'}
+  {{ else }}
   default_prog = {'F:/@win/scoop/apps/pwsh/current/pwsh.exe'},
+  {{ end }}
   font = wezterm.font("JetBrains Mono"),
   color_scheme = "Batman",
 }
