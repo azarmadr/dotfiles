@@ -1,0 +1,13 @@
+{{- if ne .chezmoi.os "linux" }}
+conky
+leftwm
+obmenu-generator
+omf
+openbox
+pier
+private_fish
+rofi
+tint2
+zathura
+picom.conf
+{{- end }}
