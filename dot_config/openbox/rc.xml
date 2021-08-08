@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -117,7 +118,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>media</name>
@@ -298,7 +299,7 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>pier run beck-on &quot;alacritty --config-file /home/azarmadr/.config/alacritty/ranger.yml&quot; ranger</command>
+        <command>pier run beck-on "alacritty --config-file /home/azarmadr/.config/alacritty/ranger.yml" ranger</command>
       </action>
       <action name="Focus"/>
     </keybind>
@@ -457,12 +458,12 @@
     </keybind>
     <keybind key="W-F11">
       <action name="Execute">
-        <command>rofi -show run -fullscreen -font &quot;Noto Sans 13&quot;</command>
+        <command>rofi -show run -fullscreen -font "Noto Sans 13"</command>
       </action>
     </keybind>
     <keybind key="W-F12">
       <action name="Execute">
-        <command>rofi -show run -font &quot;Noto Sans 13&quot;</command>
+        <command>rofi -show run -font "Noto Sans 13"</command>
       </action>
     </keybind>
     <keybind key="S-A-Left">
@@ -1158,6 +1159,9 @@
       <maximized>yes</maximized>
     </application>
     <application type="dialog">
+      <maximized>no</maximized>
+    </application>
+    <application role="GtkFileChooserDialog">
       <maximized>no</maximized>
     </application>
     <application class="Caja" title="File Operations">

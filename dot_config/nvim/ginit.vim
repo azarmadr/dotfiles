@@ -6,5 +6,6 @@ if exists('g:fvim_loaded')
    nnoremap <silent> <C-ScrollWheelDown> :set guifont=-<CR>
    nnoremap <A-CR> :FVimToggleFullScreen<CR>
 endif
-se gfn=Fira\ Code
-set guifont=FiraCode\ Nerd\ Font:h14
+if exists('g:glrnvim_gui')
+  se lines=52
+endif
