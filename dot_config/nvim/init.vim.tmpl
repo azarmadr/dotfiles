@@ -163,6 +163,7 @@ end
 
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.svls.setup{}
+require'lspconfig'.tsserver.setup{}
 require'lspconfig'.perlls.setup{on_attach=on_attach_callback}
 EOF
 "let g:LanguageClient_serverCommands = {
