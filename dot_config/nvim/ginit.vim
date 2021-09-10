@@ -7,5 +7,4 @@ if exists('g:fvim_loaded')
    nnoremap <A-CR> :FVimToggleFullScreen<CR>
 endif
 if exists('g:glrnvim_gui')
-  se lines=52
 endif
