@@ -8,58 +8,24 @@ set diffopt=vertical
 set nu relativenumber
 filetype plugin indent on
 set completefunc=LanguageClient#complete
+se title titlestring=%-25.55F\ %a%r%m titlelen=70
 set formatexpr=LanguageClient_textDocument_rangeFormatting()
 
 "_sourcing_functions
-so ~\Appdata\Local\nvim\fu.vim
-so ~\Appdata\Local\nvim\coc-fu.vim
-so ~\Appdata\Local\nvim\fern.vim
-
-"_auto_commands
-augroup helpfiles
-  au!
-  let opts = {
-        \ 'relative': 'editor',
-        \ 'width':    81,
-        \ 'height':   (nvim_list_uis()[0].height) - 9,
-        \ 'row':      3,
-        \ 'col':      (nvim_list_uis()[0].width/2)  - 27,
-        \ 'anchor':   'NW',
-        \ 'style':    'minimal',
-        \ }
-  au BufRead,BufEnter */doc/* let hb = bufnr('%') | q | call nvim_open_win(hb, 1, opts)
-  au BufRead,BufEnter */doc/* nn q ZZ
-augroup END
-autocmd BufNewFile,BufRead          Makefile set noexpandtab
-autocmd BufNewFile,BufRead,BufEnter *.do     set syntax=tcsh
-autocmd BufNewFile,BufRead,BufEnter *.V      set syntax=verilog
-autocmd BufNewFile,BufRead,BufEnter files.f  set syntax=off
-augroup sv_bindings
-   autocmd! sv_bindings
-   autocmd Filetype verilog       ino <buffer> <silent> be<CR> begin<CR>end<ESC>O
-   autocmd Filetype verilog       ino <buffer> <silent> cl<CR> class<CR>endclass<Up>
-   autocmd Filetype verilog       ino <buffer> <silent> fu<CR> function<CR>endfunction<Up>
-   autocmd Filetype verilog       ino <buffer> <silent> ta<CR> task<CR>endtask<Up>
-   autocmd Filetype verilog       ino <buffer> <silent> mo<CR> module<CR>endmodule<Up>
-   autocmd Filetype systemverilog ino <buffer> <silent> be<CR> begin<CR>end<ESC>O
-   autocmd Filetype systemverilog ino <buffer> <silent> cl<CR> class<CR>endclass<Up>
-   autocmd Filetype systemverilog ino <buffer> <silent> fu<CR> function<CR>endfunction<Up>
-   autocmd Filetype systemverilog ino <buffer> <silent> ta<CR> task<CR>endtask<Up>
-   autocmd Filetype systemverilog ino <buffer> <silent> mo<CR> module<CR>endmodule<Up>
-augroup END
-"augroup nerdtree_open
-"   autocmd!
-"   autocmd VimEnter * NERDTree | wincmd p
-"augroup END
-autocmd BufNewFile,BufRead,BufEnter *.do    set syntax=tcsh
-autocmd BufNewFile,BufRead,BufEnter *.V     set syntax=verilog
-autocmd BufNewFile,BufRead,BufEnter files.f set syntax=off
+so ~/.config/nvim/fu.vim
+so ~/.config/nvim/rnvimr.vim
+so ~/.config/nvim/coc-fu.vim
 
 "_let_options
-let g:python3_host_prog = 'F:\@win\scoop\apps\python\current\python.exe'
+let g:python3_host_prog = '/usr/bin/python3.9'
 let g:LanguageClient_loadSettings = 1
-"let g:nerdtree_tabs_open_on_console_startup=1
-"let g:NERDTreeSortOrder = map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
+let g:LanguageClient_serverCommands = {
+   \ 'rust'          : ['rust-analyzer'],
+   \ 'systemverilog' : ['svls'],
+   \ 'cpp'           : ['clangd', '-background-index'],
+   \ 'c'             : ['clangd', '-background-index'],
+   \ 'h'             : ['clangd', '-background-index'],
+   \ }
 
 "_map_keys
 nn ; :
@@ -115,7 +81,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'antoinemadec/FixCursorHold.nvim'
   Plug 'xolox/vim-session'
   Plug 'xolox/vim-misc'
-  Plug 'junegunn/fzf', { 'do': 'pwsh install.ps1' }
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'davidhalter/jedi-vim'
   Plug 'scrooloose/syntastic'
@@ -125,18 +92,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'godlygeek/tabular'
-  "Plug 'kevinhwang91/rnvimr'
 " Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'pwsh install.ps1',
-"    \ }
+"     \ 'branch': 'next',
+"     \ 'do': 'sh install.sh',
+"     \ }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'junegunn/gv.vim'
-  Plug 'fidian/hexmode'
-
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'kevinhwang91/rnvimr'
   Plug 'neovim/nvim-lspconfig'
   "_Syntax
   Plug 'zigford/vim-powershell'
@@ -162,7 +128,7 @@ call plug#end()
 
 "_colorscheme
 colorscheme codedark
-
+"let g:airline_section_z = '%L-' . g:airline_section_z
 "_lua
 "packadd folding-nvim
 
@@ -177,6 +143,7 @@ end
 
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.svls.setup{}
+require'lspconfig'.tsserver.setup{}
 require'lspconfig'.perlls.setup{on_attach=on_attach_callback}
 EOF
 "let g:LanguageClient_serverCommands = {
