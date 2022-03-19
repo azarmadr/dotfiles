@@ -27,9 +27,10 @@ return {
   {{ if eq .chezmoi.os "linux" }}
     '/usr/bin/fish'
   {{ else }}
-    'F:/@win/scoop/apps/pwsh/current/pwsh.exe'
+    'D:/.scoop/apps/pwsh/current/pwsh.exe'
   {{ end }}
   },
   font = wezterm.font("JetBrains Mono"),
-  color_scheme = "Batman",
+  font_size = 9,
+  color_scheme = "Calamity",
 }
