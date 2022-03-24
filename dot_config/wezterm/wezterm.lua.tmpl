@@ -1,5 +1,4 @@
 local wezterm = require 'wezterm';
-
 {{ if eq .chezmoi.os "linux" }}
 local config_dir = os.getenv("HOME") .. "/.config/wezterm/";
 {{ else }}
@@ -35,4 +34,3 @@ return {
   font_size = 9,
   color_scheme = "Calamity",
 }
-

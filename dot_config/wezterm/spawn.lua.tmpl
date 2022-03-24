@@ -10,6 +10,8 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   })
   table.insert(launch_menu, { label = "cmd", args = {"cmd.exe"}, })
 
+  table.insert(launch_menu, { label = "cmd", args = {"cmd.exe"}, })
+
   -- Find installed visual studio version(s) and add their compilation
   -- environment command prompts to the menu
   for _, vsvers in ipairs(wezterm.glob("Microsoft Visual Studio/20*", "C:/Program Files (x86)")) do

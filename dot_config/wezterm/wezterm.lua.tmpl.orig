@@ -1,14 +1,16 @@
 local wezterm = require 'wezterm';
 <<<<<<< HEAD
+
 {{ if eq .chezmoi.os "linux" }}
 local config_dir = os.getenv("HOME") .. "/.config/wezterm/";
+=======
+{{ if eq .chezmoi.os "linux" }}
+local config_dir = "~/.config/wezterm/";
+>>>>>>> 205ee60 (wez)
 {{ else }}
 local config_dir = [[C:\Users\madaz\.config\wezterm\]];
 {{ end }}
 launch_menu = dofile(config_dir .. "spawn.lua");
-=======
-local launch_menu = require'spawn';
->>>>>>> fdc1a73 (wez)
 wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
   local zoomed = ""
   if tab.active_pane.is_zoomed then
@@ -38,3 +40,4 @@ return {
   font_size = 9,
   color_scheme = "Calamity",
 }
+
