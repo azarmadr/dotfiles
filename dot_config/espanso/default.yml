@@ -1,0 +1,48 @@
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  - trigger: ";sin"
+    replace: "scoop install "
+
+  - trigger: ";sup"
+    replace: "scoop update *\n"
+
+  - trigger: ";sun"
+    replace: "scoop uninstall "
+
+  - trigger: ";ssr"
+    replace: "scoop search "
+
+  - trigger: ";bt"
+    replace: "wsl -- bat "
+
+  # Dates
+  - trigger: ";date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m-%d-%Y"
+
+  # Shell commands
+  - trigger: ";shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+  - trigger: ";dp"
+    replace: "madr#3Azar\n"
+  # Work related
+  - trigger: ";wa"
+    replace: "madar@synopsys.com"
+
+  - trigger: ";wp"
+    replace: "Welcome@123"
