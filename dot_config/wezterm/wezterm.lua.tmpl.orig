@@ -1,0 +1,40 @@
+local wezterm = require 'wezterm';
+<<<<<<< HEAD
+{{ if eq .chezmoi.os "linux" }}
+local config_dir = os.getenv("HOME") .. "/.config/wezterm/";
+{{ else }}
+local config_dir = [[C:\Users\madaz\.config\wezterm\]];
+{{ end }}
+launch_menu = dofile(config_dir .. "spawn.lua");
+=======
+local launch_menu = require'spawn';
+>>>>>>> fdc1a73 (wez)
+wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+  local zoomed = ""
+  if tab.active_pane.is_zoomed then
+    zoomed = "[Z] "
+  end
+
+  local index = ""
+  if #tabs > 1 then
+    index = string.format("[%d/%d] ", tab.tab_index + 1, #tabs)
+  end
+
+  return zoomed .. index .. tab.active_pane.title
+end)
+
+return {
+  check_for_updates = false,
+  use_dead_keys = false,
+  launch_menu = launch_menu,
+  default_prog = {
+  {{ if eq .chezmoi.os "linux" }}
+    '/usr/bin/fish'
+  {{ else }}
+    'D:/.scoop/apps/pwsh/current/pwsh.exe'
+  {{ end }}
+  },
+  font = wezterm.font("JetBrains Mono"),
+  font_size = 9,
+  color_scheme = "Calamity",
+}
