@@ -25,7 +25,7 @@ matches:
 
   # Dates
   - trigger: ";date"
-    replace: "{{"mydate"}}"
+    replace: "{{"{{mydate}}"}}"
     vars:
       - name: mydate
         type: date
@@ -34,7 +34,7 @@ matches:
 
   # Shell commands
   - trigger: ";shell"
-    replace: "{{"output"}}"
+    replace: "{{"{{output}}"}}"
     vars:
       - name: output
         type: shell
