@@ -5,6 +5,7 @@
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
+  {{if eq .chezmoi.os "windows"}}
   - trigger: ";sin"
     replace: "scoop install "
 
@@ -19,10 +20,12 @@ matches:
 
   - trigger: ";bt"
     replace: "wsl -- bat "
+  {{end}}
+
 
   # Dates
   - trigger: ";date"
-    replace: "{{mydate}}"
+    replace: "{{"mydate"}}"
     vars:
       - name: mydate
         type: date
@@ -31,7 +34,7 @@ matches:
 
   # Shell commands
   - trigger: ";shell"
-    replace: "{{output}}"
+    replace: "{{"output"}}"
     vars:
       - name: output
         type: shell
