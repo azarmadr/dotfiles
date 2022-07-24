@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+sudo pacman -S ripgrep nvim
+mv ~/.config/nvim ~/.config/nvimbackup
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+{{ else if eq .chezmoi.os "windows" -}}
+scoop install ripgrep
+{{ end -}}
+
