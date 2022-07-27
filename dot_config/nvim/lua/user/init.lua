@@ -232,8 +232,8 @@ local config = {
   polish = function()
     -- Set key binding
     vim.keymap.set({'n','v'}, ';', ':')
-    vim.keymap.set('n', '', ':wa')
-    vim.keymap.set('i', '', ':wa')
+    vim.keymap.set({'i','n'}, '<c-s>', '<Esc>:wa<CR>')
+
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePost", {
