@@ -1,20 +1,99 @@
+#possible keybindings
+#https://github.com/leftwm/leftwm/blob/master/src/utils/xkeysym_lookup.rs
+
+#Mod4 = Super key
 modkey = "Mod4"
 workspaces = []
 tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-layouts = ["MainAndVertStack", "MainAndHorizontalStack", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle"]
-disable_current_tag_swap = false
+# tags = ["", "", "", "", "", "", "", "", ""]
+# tags = ["www", "edit", "gimp", "inkscape", "meld", "video","vm", "files", "music"]
+
+layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
+
+scratchpad = [
+  {name = "WezTerm", value = "wezterm-gui", x = 0.1, y = 0.1, height = 0.81, width = 0.81},
+  {name = "Dolphin", value = "caja",        x = 0.1, y = 0.1, height = 0.81, width = 0.81},
+  {name = "Brave",   value = "brave",       x = 0.1, y = 0.1, height = 0.89, width = 0.89},
+]
+
+window_rules = [
+  {window_class = 'recall-stones', spawn_floating=false, spawn_on_tag=8},
+  {window_class = 'avalanche_tetris', spawn_floating=false, spawn_on_tag=8},
+  {window_class = 'hdm_jam_jam', spawn_floating=true, spawn_on_tag=8},
+]
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "WezTerm"
+modifier = ["modkey"]
+key = "Return"
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "Dolphin"
+modifier = ["modkey"]
+key = "e"
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "Brave"
+modifier = ["modkey"]
+key = "w"
 
 [[keybind]]
 command = "Execute"
-value = "dmenu_run"
+value = "killall conky"
 modifier = ["modkey"]
-key = "p"
+key = "c"
+
+[[keybind]]
+command = "Execute"
+modifier = ["modkey","Shift"]
+key = "d"
+value = "rofi -show run"
+# value = "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'"
+
+[[keybind]]
+command = "Execute"
+value = "archlinux-logout"
+modifier = ["modkey"]
+key = "x"
+
+[[keybind]]
+command = "Execute"
+value = "neovide"
+modifier = ["modkey", "Shift"]
+key = "Return"
+
+[[keybind]]
+command = "Execute"
+value = "leftwm-command ToggleFullScreen"
+modifier = ["modkey"]
+key = "f"
+
+[[keybind]]
+command = "Execute"
+value = "urxvt"
+modifier = ["modkey"]
+key = "t"
 
 [[keybind]]
 command = "Execute"
 value = "alacritty"
-modifier = ["modkey", "Shift"]
+modifier = ["Control", "Alt"]
+key = "t"
+
+[[keybind]]
+command = "Execute"
+value = "alacritty"
+modifier = ["Control", "Alt"]
 key = "Return"
+
+#[[keybind]]
+#command = "Execute"
+#value = "alacritty"
+#modifier = ["modkey"]
+#key = "Return"
 
 [[keybind]]
 command = "CloseWindow"
@@ -22,31 +101,29 @@ modifier = ["modkey", "Shift"]
 key = "q"
 
 [[keybind]]
+command = "CloseWindow"
+modifier = ["modkey"]
+key = "q"
+
+[[keybind]]
 command = "SoftReload"
 modifier = ["modkey", "Shift"]
 key = "r"
 
+#[[keybind]]
+#command = "SwapTags"
+#modifier = ["modkey"]
+#key = "w"
+
 [[keybind]]
-command = "Execute"
-value = "pkill leftwm"
+command = "MoveWindowUp"
 modifier = ["modkey", "Shift"]
-key = "x"
+key = "k"
 
 [[keybind]]
-command = "Execute"
-value = "slock"
-modifier = ["modkey", "Control"]
-key = "l"
-
-[[keybind]]
-command = "MoveToLastWorkspace"
+command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
-key = "w"
-
-[[keybind]]
-command = "SwapTags"
-modifier = ["modkey"]
-key = "w"
+key = "j"
 
 [[keybind]]
 command = "MoveWindowUp"
@@ -59,19 +136,34 @@ modifier = ["modkey", "Shift"]
 key = "Down"
 
 [[keybind]]
-command = "MoveWindowTop"
-modifier = ["modkey"]
-key = "Return"
-
-[[keybind]]
 command = "FocusWindowUp"
 modifier = ["modkey"]
-key = "Up"
+key = "k"
 
 [[keybind]]
 command = "FocusWindowDown"
 modifier = ["modkey"]
-key = "Down"
+key = "j"
+
+[[keybind]]
+command = "NextLayout"
+modifier = ["modkey"]
+key = "space"
+
+[[keybind]]
+command = "PreviousLayout"
+modifier = ["modkey", "Shift"]
+key = "space"
+
+[[keybind]]
+command = "FocusWorkspaceNext"
+modifier = ["modkey"]
+key = "l"
+
+[[keybind]]
+command = "FocusWorkspacePrevious"
+modifier = ["modkey"]
+key = "h"
 
 [[keybind]]
 command = "NextLayout"
@@ -84,14 +176,76 @@ modifier = ["modkey", "Control"]
 key = "Down"
 
 [[keybind]]
-command = "FocusWorkspaceNext"
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "Down"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey"]
+key = "Up"
+
+[[keybind]]
+command = "Execute"
+value = "leftwm-command SwapScreens"
+modifier = ["modkey"]
+key = "Left"
+
+[[keybind]]
+command = "Execute"
+value = "leftwm-command SwapScreens"
 modifier = ["modkey"]
 key = "Right"
 
 [[keybind]]
-command = "FocusWorkspacePrevious"
-modifier = ["modkey"]
+command = "MoveWindowToNextWorkspace"
+modifier = ["modkey","Shift"]
 key = "Left"
+
+[[keybind]]
+command = "MoveWindowToNextWorkspace"
+modifier = ["modkey","Shift"]
+key = "Right"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["Control","Alt"]
+key = "Left"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["Control", "Alt"]
+key = "Right"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["Control","Alt"]
+key = "Up"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["Control", "Alt"]
+key = "Down"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "Tab"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey", "Shift"]
+key = "Tab"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["Alt"]
+key = "Tab"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["Alt", "Shift"]
+key = "Tab"
 
 [[keybind]]
 command = "GotoTag"
@@ -148,55 +302,55 @@ modifier = ["modkey"]
 key = "9"
 
 [[keybind]]
-command = "MoveToTag"
-value = "1"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 1\" \"SendWorkspaceToTag 0 0\""
 modifier = ["modkey", "Shift"]
 key = "1"
 
 [[keybind]]
-command = "MoveToTag"
-value = "2"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 2\" \"SendWorkspaceToTag 0 1\""
 modifier = ["modkey", "Shift"]
 key = "2"
 
 [[keybind]]
-command = "MoveToTag"
-value = "3"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 3\" \"SendWorkspaceToTag 0 2\""
 modifier = ["modkey", "Shift"]
 key = "3"
 
 [[keybind]]
-command = "MoveToTag"
-value = "4"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 4\" \"SendWorkspaceToTag 0 3\""
 modifier = ["modkey", "Shift"]
 key = "4"
 
 [[keybind]]
-command = "MoveToTag"
-value = "5"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 5\" \"SendWorkspaceToTag 0 4\""
 modifier = ["modkey", "Shift"]
 key = "5"
 
 [[keybind]]
-command = "MoveToTag"
-value = "6"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 6\" \"SendWorkspaceToTag 0 5\""
 modifier = ["modkey", "Shift"]
 key = "6"
 
 [[keybind]]
-command = "MoveToTag"
-value = "7"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 7\" \"SendWorkspaceToTag 0 6\""
 modifier = ["modkey", "Shift"]
 key = "7"
 
 [[keybind]]
-command = "MoveToTag"
-value = "8"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 8\" \"SendWorkspaceToTag 0 7\""
 modifier = ["modkey", "Shift"]
 key = "8"
 
 [[keybind]]
-command = "MoveToTag"
-value = "9"
+command = "Execute"
+value = "leftwm-command \"SendWindowToTag 9\" \"SendWorkspaceToTag 0 8\""
 modifier = ["modkey", "Shift"]
 key = "9"
