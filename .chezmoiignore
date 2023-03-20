@@ -1,14 +1,18 @@
 {{- if ne .chezmoi.os "linux" }}
-conky/*
-*.fish
-leftwm
-obmenu-generator
-omf
-openbox
-pier
-private_fish
-rofi
-tint2
-zathura
-picom.conf
+.config/fish
+.config/conky
+.config/leftwm
+.config/obmenu-generator
+.config/openbox
+.config/omf
+.config/openbox
+.config/pier
+.config/private_fish
+.config/rofi
+.config/tint2
+.config/zathura
+.config/picom.conf
+{{- end }}
+{{- if ne .chezmoi.os "windows" }}
+.config/scoop
 {{- end }}
