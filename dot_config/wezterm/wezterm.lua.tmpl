@@ -27,7 +27,7 @@ return {
   {{ if eq .chezmoi.os "linux" }}
     '/usr/bin/fish'
   {{ else }}
-    'C:/Users/{{ .chezmoi.username }}/scoop/shims/nu.exe'
+    '{{ .chezmoi.homeDir }}/scoop/shims/nu.exe'
   {{ end }}
   },
   font = wezterm.font("JetBrains Mono"),
