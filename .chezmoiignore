@@ -1,5 +1,6 @@
 {{- if ne .chezmoi.os "linux" }}
-conky
+conky/*
+*.fish
 leftwm
 obmenu-generator
 omf

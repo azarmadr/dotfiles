@@ -2,9 +2,9 @@ local wezterm = require 'wezterm';
 {{ if eq .chezmoi.os "linux" }}
 local config_dir = os.getenv("HOME") .. "/.config/wezterm/";
 {{ else }}
-local config_dir = [[C:\Users\madaz\.config\wezterm\]];
+local config_dir = os.getenv("HOMEDRIVE") .. os.getenv("HOMEPATH") .. [[\.config\wezterm\]];
 {{ end }}
-launch_menu = dofile(config_dir .. "spawn.lua");
+local launch_menu = dofile(config_dir .. "spawn.lua");
 wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
   local zoomed = ""
   if tab.active_pane.is_zoomed then
@@ -27,7 +27,7 @@ return {
   {{ if eq .chezmoi.os "linux" }}
     '/usr/bin/fish'
   {{ else }}
-    'D:/.scoop/apps/pwsh/current/pwsh.exe'
+    'C:/Users/{{ .chezmoi.username }}/scoop/shims/nu.exe'
   {{ end }}
   },
   font = wezterm.font("JetBrains Mono"),

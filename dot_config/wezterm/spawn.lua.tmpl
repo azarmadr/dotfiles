@@ -1,6 +1,16 @@
 local wezterm = require 'wezterm';
 
 local launch_menu = {}
+
+function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
+local scoop_dir = (os.getenv("SCOOP") or [[C:\Users\madar\scoop]])..[[\shims\]]
+
+table.insert(launch_menu, {label = "NuShell", args = {scoop_dir .. "nu.exe"}})
+table.insert(launch_menu, {label = "PWSH", args = {scoop_dir .. "pwsh.exe"}})
 table.insert(launch_menu, {label = "NeoVIM", args = {"nvim",}})
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
@@ -8,8 +18,6 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     label = "PowerShell",
     args = {"powershell.exe", "-NoLogo"},
   })
-  table.insert(launch_menu, { label = "cmd", args = {"cmd.exe"}, })
-
   table.insert(launch_menu, { label = "cmd", args = {"cmd.exe"}, })
 
   -- Find installed visual studio version(s) and add their compilation
@@ -30,6 +38,9 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   wsl_list = wezterm.utf16_to_utf8(wsl_list)
 
   for idx, line in ipairs(wezterm.split_by_newlines(wsl_list)) do
+    if idx == 1 and not line:match "NAME%s*STATE%s*VERSION/" then
+      break
+    end
     -- Skip the first line of output; it's just a header
     if idx > 1 then
       -- Remove the "(Default)" marker from the default line to arrive
