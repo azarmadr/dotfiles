@@ -24,11 +24,11 @@ return {
   use_dead_keys = false,
   launch_menu = launch_menu,
   default_prog = {
-  {{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux" }}
     '/usr/bin/fish'
-  {{ else }}
+{{ else }}
     '{{ .chezmoi.homeDir }}/scoop/shims/nu.exe'
-  {{ end }}
+{{ end }}
   },
   font = wezterm.font("JetBrains Mono"),
   font_size = 9,
