@@ -1,3 +1,4 @@
+fishd.*
 {{- if ne .chezmoi.os "linux" }}
 .config/fish
 .config/conky

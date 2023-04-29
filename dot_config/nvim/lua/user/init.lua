@@ -52,13 +52,11 @@ local config = {
   },
 
   plugins = {
-    init = {
       { "junegunn/vim-easy-align" },
       {
         "beauwilliams/focus.nvim",
         config = function() require("focus").setup() end,
       },
-    },
     bufferline = { options = { numbers = "buffer_id" } },
   },
 

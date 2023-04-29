@@ -1,8 +1,9 @@
-#source /home/azarmadr/.local/share/pearl/boot/fish/pearl.fish
 set -gx EDITOR nvim
-zoxide   init fish               | source
-#zoxide   init fish --no-aliases | source
-starship init fish               | source
+set -gx FX_LANG node
+set -gx NODE_PATH (npm root -g)
+
+zoxide   init fish          | source
+starship init fish          | source
 /usr/bin/rakubrew init Fish | source
 
 ## Set values
