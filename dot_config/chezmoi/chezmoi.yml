@@ -5,3 +5,7 @@ merge:
   command: meld
 diff:
   command: meld
+cd:
+  command: nu
+edit:
+  command: nvim
