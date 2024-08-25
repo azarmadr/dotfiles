@@ -1,0 +1,11 @@
+[diff]
+	tool = nvim
+[difftool "nvim"]
+	cmd = nvim -d $LOCAL $REMOTE
+[merge]
+	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim -d $LOCAL $REMOTE $BASE $MERGED
+[user]
+	email = azarmadr@pm.me
+	name = Azhar Madar Shaik
